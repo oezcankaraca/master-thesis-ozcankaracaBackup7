@@ -110,13 +110,13 @@ public class ConnectionDetails {
         if (choiceOfPdfMB == 2) {
             sizeOfPDF = 2239815;
         } else if (choiceOfPdfMB == 4) {
-            sizeOfPDF = 4293938;
+            sizeOfPDF = 4194304;
         } else if (choiceOfPdfMB == 8) {
-            sizeOfPDF = 8869498;
+            sizeOfPDF = 8388608;
         } else if (choiceOfPdfMB == 16) {
-            sizeOfPDF = 15890720;
+            sizeOfPDF = 16777216;
         } else if (choiceOfPdfMB == 32) {
-            sizeOfPDF = 32095088;
+            sizeOfPDF = 33554432;
         } else if (choiceOfPdfMB == 64) {
             sizeOfPDF = 67108864;
         } else if (choiceOfPdfMB == 128) {
