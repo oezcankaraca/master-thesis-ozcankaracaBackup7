@@ -6,10 +6,10 @@
       "prefix": "p2p",
       "mgmt": {
         "network": "fixedips",
-        "bridge": "br-cf3d2062b697",
+        "bridge": "br-a084254f3de7",
         "ipv4-subnet": "172.100.100.0/24",
         "ipv4-gw": "172.100.100.1",
-        "ipv6-gw": "fe80::42:49ff:fe28:1736",
+        "ipv6-gw": "fe80::42:42ff:fec8:7c75",
         "mtu": 1500,
         "external-access": true
       }
@@ -27,13 +27,13 @@
       "image": "image-testbed",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.100.100.5",
+      "mgmt-ipv4-address": "172.100.100.7",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-cf3d2062b697",
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/1",
@@ -47,8 +47,318 @@
       "port-bindings": [
       ]
     },
-    "2": {
+    "10": {
       "index": "1",
+      "shortname": "10",
+      "longname": "p2p-containerlab-topology-10",
+      "fqdn": "10.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/10",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.9",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/10",
+        "clab-node-name": "10",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "11": {
+      "index": "2",
+      "shortname": "11",
+      "longname": "p2p-containerlab-topology-11",
+      "fqdn": "11.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/11",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.27",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/11",
+        "clab-node-name": "11",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "12": {
+      "index": "3",
+      "shortname": "12",
+      "longname": "p2p-containerlab-topology-12",
+      "fqdn": "12.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/12",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.57",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/12",
+        "clab-node-name": "12",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "13": {
+      "index": "4",
+      "shortname": "13",
+      "longname": "p2p-containerlab-topology-13",
+      "fqdn": "13.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/13",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.43",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/13",
+        "clab-node-name": "13",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "14": {
+      "index": "5",
+      "shortname": "14",
+      "longname": "p2p-containerlab-topology-14",
+      "fqdn": "14.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/14",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.20",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/14",
+        "clab-node-name": "14",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "15": {
+      "index": "6",
+      "shortname": "15",
+      "longname": "p2p-containerlab-topology-15",
+      "fqdn": "15.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/15",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.40",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/15",
+        "clab-node-name": "15",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "16": {
+      "index": "7",
+      "shortname": "16",
+      "longname": "p2p-containerlab-topology-16",
+      "fqdn": "16.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/16",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.13",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/16",
+        "clab-node-name": "16",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "17": {
+      "index": "8",
+      "shortname": "17",
+      "longname": "p2p-containerlab-topology-17",
+      "fqdn": "17.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/17",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.26",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/17",
+        "clab-node-name": "17",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "18": {
+      "index": "9",
+      "shortname": "18",
+      "longname": "p2p-containerlab-topology-18",
+      "fqdn": "18.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/18",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.61",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/18",
+        "clab-node-name": "18",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "19": {
+      "index": "10",
+      "shortname": "19",
+      "longname": "p2p-containerlab-topology-19",
+      "fqdn": "19.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/19",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.25",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/19",
+        "clab-node-name": "19",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "2": {
+      "index": "11",
       "shortname": "2",
       "longname": "p2p-containerlab-topology-2",
       "fqdn": "2.containerlab-topology.io",
@@ -58,13 +368,13 @@
       "image": "image-testbed",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.100.100.6",
+      "mgmt-ipv4-address": "172.100.100.62",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-cf3d2062b697",
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/2",
@@ -78,8 +388,318 @@
       "port-bindings": [
       ]
     },
+    "20": {
+      "index": "12",
+      "shortname": "20",
+      "longname": "p2p-containerlab-topology-20",
+      "fqdn": "20.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/20",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.53",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/20",
+        "clab-node-name": "20",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "21": {
+      "index": "13",
+      "shortname": "21",
+      "longname": "p2p-containerlab-topology-21",
+      "fqdn": "21.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/21",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.32",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/21",
+        "clab-node-name": "21",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "22": {
+      "index": "14",
+      "shortname": "22",
+      "longname": "p2p-containerlab-topology-22",
+      "fqdn": "22.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/22",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.21",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/22",
+        "clab-node-name": "22",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "23": {
+      "index": "15",
+      "shortname": "23",
+      "longname": "p2p-containerlab-topology-23",
+      "fqdn": "23.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/23",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.79",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/23",
+        "clab-node-name": "23",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "24": {
+      "index": "16",
+      "shortname": "24",
+      "longname": "p2p-containerlab-topology-24",
+      "fqdn": "24.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/24",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.55",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/24",
+        "clab-node-name": "24",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "25": {
+      "index": "17",
+      "shortname": "25",
+      "longname": "p2p-containerlab-topology-25",
+      "fqdn": "25.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/25",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.66",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/25",
+        "clab-node-name": "25",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "26": {
+      "index": "18",
+      "shortname": "26",
+      "longname": "p2p-containerlab-topology-26",
+      "fqdn": "26.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/26",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.52",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/26",
+        "clab-node-name": "26",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "27": {
+      "index": "19",
+      "shortname": "27",
+      "longname": "p2p-containerlab-topology-27",
+      "fqdn": "27.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/27",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.51",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/27",
+        "clab-node-name": "27",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "28": {
+      "index": "20",
+      "shortname": "28",
+      "longname": "p2p-containerlab-topology-28",
+      "fqdn": "28.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/28",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/28",
+        "clab-node-name": "28",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "29": {
+      "index": "21",
+      "shortname": "29",
+      "longname": "p2p-containerlab-topology-29",
+      "fqdn": "29.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/29",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.45",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/29",
+        "clab-node-name": "29",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
     "3": {
-      "index": "2",
+      "index": "22",
       "shortname": "3",
       "longname": "p2p-containerlab-topology-3",
       "fqdn": "3.containerlab-topology.io",
@@ -89,13 +709,13 @@
       "image": "image-testbed",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.100.100.7",
+      "mgmt-ipv4-address": "172.100.100.10",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-cf3d2062b697",
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/3",
@@ -109,8 +729,318 @@
       "port-bindings": [
       ]
     },
+    "30": {
+      "index": "23",
+      "shortname": "30",
+      "longname": "p2p-containerlab-topology-30",
+      "fqdn": "30.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/30",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.31",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/30",
+        "clab-node-name": "30",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "31": {
+      "index": "24",
+      "shortname": "31",
+      "longname": "p2p-containerlab-topology-31",
+      "fqdn": "31.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/31",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.24",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/31",
+        "clab-node-name": "31",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "32": {
+      "index": "25",
+      "shortname": "32",
+      "longname": "p2p-containerlab-topology-32",
+      "fqdn": "32.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/32",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.33",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/32",
+        "clab-node-name": "32",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "33": {
+      "index": "26",
+      "shortname": "33",
+      "longname": "p2p-containerlab-topology-33",
+      "fqdn": "33.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/33",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.22",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/33",
+        "clab-node-name": "33",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "34": {
+      "index": "27",
+      "shortname": "34",
+      "longname": "p2p-containerlab-topology-34",
+      "fqdn": "34.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/34",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.23",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/34",
+        "clab-node-name": "34",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "35": {
+      "index": "28",
+      "shortname": "35",
+      "longname": "p2p-containerlab-topology-35",
+      "fqdn": "35.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/35",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.67",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/35",
+        "clab-node-name": "35",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "36": {
+      "index": "29",
+      "shortname": "36",
+      "longname": "p2p-containerlab-topology-36",
+      "fqdn": "36.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/36",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.15",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/36",
+        "clab-node-name": "36",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "37": {
+      "index": "30",
+      "shortname": "37",
+      "longname": "p2p-containerlab-topology-37",
+      "fqdn": "37.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/37",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.60",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/37",
+        "clab-node-name": "37",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "38": {
+      "index": "31",
+      "shortname": "38",
+      "longname": "p2p-containerlab-topology-38",
+      "fqdn": "38.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/38",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.80",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/38",
+        "clab-node-name": "38",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "39": {
+      "index": "32",
+      "shortname": "39",
+      "longname": "p2p-containerlab-topology-39",
+      "fqdn": "39.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/39",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.78",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/39",
+        "clab-node-name": "39",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
     "4": {
-      "index": "3",
+      "index": "33",
       "shortname": "4",
       "longname": "p2p-containerlab-topology-4",
       "fqdn": "4.containerlab-topology.io",
@@ -120,13 +1050,13 @@
       "image": "image-testbed",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.100.100.8",
+      "mgmt-ipv4-address": "172.100.100.29",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-cf3d2062b697",
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/4",
@@ -134,19 +1064,205 @@
         "clab-node-type": "",
         "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
         "containerlab": "containerlab-topology",
-        "group": "superpeer",
-        "role": "receiver/sender"
+        "group": "peer",
+        "role": "receiver"
       },
       "port-bindings": [
       ]
     },
-    "5": {
-      "index": "4",
-      "shortname": "5",
-      "longname": "p2p-containerlab-topology-5",
-      "fqdn": "5.containerlab-topology.io",
+    "40": {
+      "index": "34",
+      "shortname": "40",
+      "longname": "p2p-containerlab-topology-40",
+      "fqdn": "40.containerlab-topology.io",
       "group": "",
-      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/5",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/40",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.30",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/40",
+        "clab-node-name": "40",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "41": {
+      "index": "35",
+      "shortname": "41",
+      "longname": "p2p-containerlab-topology-41",
+      "fqdn": "41.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/41",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.48",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/41",
+        "clab-node-name": "41",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "42": {
+      "index": "36",
+      "shortname": "42",
+      "longname": "p2p-containerlab-topology-42",
+      "fqdn": "42.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/42",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.63",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/42",
+        "clab-node-name": "42",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "43": {
+      "index": "37",
+      "shortname": "43",
+      "longname": "p2p-containerlab-topology-43",
+      "fqdn": "43.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/43",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.39",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/43",
+        "clab-node-name": "43",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "44": {
+      "index": "38",
+      "shortname": "44",
+      "longname": "p2p-containerlab-topology-44",
+      "fqdn": "44.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/44",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.75",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/44",
+        "clab-node-name": "44",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "45": {
+      "index": "39",
+      "shortname": "45",
+      "longname": "p2p-containerlab-topology-45",
+      "fqdn": "45.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/45",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.37",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/45",
+        "clab-node-name": "45",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "46": {
+      "index": "40",
+      "shortname": "46",
+      "longname": "p2p-containerlab-topology-46",
+      "fqdn": "46.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/46",
       "kind": "linux",
       "image": "image-testbed",
       "mgmt-net": "",
@@ -157,7 +1273,131 @@
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-cf3d2062b697",
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/46",
+        "clab-node-name": "46",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "47": {
+      "index": "41",
+      "shortname": "47",
+      "longname": "p2p-containerlab-topology-47",
+      "fqdn": "47.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/47",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.64",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/47",
+        "clab-node-name": "47",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "48": {
+      "index": "42",
+      "shortname": "48",
+      "longname": "p2p-containerlab-topology-48",
+      "fqdn": "48.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/48",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.44",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/48",
+        "clab-node-name": "48",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "49": {
+      "index": "43",
+      "shortname": "49",
+      "longname": "p2p-containerlab-topology-49",
+      "fqdn": "49.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/49",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.18",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/49",
+        "clab-node-name": "49",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "5": {
+      "index": "44",
+      "shortname": "5",
+      "longname": "p2p-containerlab-topology-5",
+      "fqdn": "5.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/5",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.8",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/5",
@@ -171,8 +1411,938 @@
       "port-bindings": [
       ]
     },
+    "50": {
+      "index": "45",
+      "shortname": "50",
+      "longname": "p2p-containerlab-topology-50",
+      "fqdn": "50.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/50",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.14",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/50",
+        "clab-node-name": "50",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "51": {
+      "index": "46",
+      "shortname": "51",
+      "longname": "p2p-containerlab-topology-51",
+      "fqdn": "51.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/51",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.42",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/51",
+        "clab-node-name": "51",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "52": {
+      "index": "47",
+      "shortname": "52",
+      "longname": "p2p-containerlab-topology-52",
+      "fqdn": "52.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/52",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.19",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/52",
+        "clab-node-name": "52",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "53": {
+      "index": "48",
+      "shortname": "53",
+      "longname": "p2p-containerlab-topology-53",
+      "fqdn": "53.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/53",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.34",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/53",
+        "clab-node-name": "53",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "54": {
+      "index": "49",
+      "shortname": "54",
+      "longname": "p2p-containerlab-topology-54",
+      "fqdn": "54.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/54",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.47",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/54",
+        "clab-node-name": "54",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "55": {
+      "index": "50",
+      "shortname": "55",
+      "longname": "p2p-containerlab-topology-55",
+      "fqdn": "55.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/55",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.46",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/55",
+        "clab-node-name": "55",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "56": {
+      "index": "51",
+      "shortname": "56",
+      "longname": "p2p-containerlab-topology-56",
+      "fqdn": "56.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/56",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.56",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/56",
+        "clab-node-name": "56",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "57": {
+      "index": "52",
+      "shortname": "57",
+      "longname": "p2p-containerlab-topology-57",
+      "fqdn": "57.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/57",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.73",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/57",
+        "clab-node-name": "57",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "58": {
+      "index": "53",
+      "shortname": "58",
+      "longname": "p2p-containerlab-topology-58",
+      "fqdn": "58.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/58",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.77",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/58",
+        "clab-node-name": "58",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "59": {
+      "index": "54",
+      "shortname": "59",
+      "longname": "p2p-containerlab-topology-59",
+      "fqdn": "59.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/59",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.72",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/59",
+        "clab-node-name": "59",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "6": {
+      "index": "55",
+      "shortname": "6",
+      "longname": "p2p-containerlab-topology-6",
+      "fqdn": "6.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/6",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.70",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/6",
+        "clab-node-name": "6",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "60": {
+      "index": "56",
+      "shortname": "60",
+      "longname": "p2p-containerlab-topology-60",
+      "fqdn": "60.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/60",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.28",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/60",
+        "clab-node-name": "60",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "61": {
+      "index": "57",
+      "shortname": "61",
+      "longname": "p2p-containerlab-topology-61",
+      "fqdn": "61.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/61",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.41",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/61",
+        "clab-node-name": "61",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "62": {
+      "index": "58",
+      "shortname": "62",
+      "longname": "p2p-containerlab-topology-62",
+      "fqdn": "62.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/62",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.76",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/62",
+        "clab-node-name": "62",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "63": {
+      "index": "59",
+      "shortname": "63",
+      "longname": "p2p-containerlab-topology-63",
+      "fqdn": "63.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/63",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.49",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/63",
+        "clab-node-name": "63",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "64": {
+      "index": "60",
+      "shortname": "64",
+      "longname": "p2p-containerlab-topology-64",
+      "fqdn": "64.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/64",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.58",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/64",
+        "clab-node-name": "64",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "65": {
+      "index": "61",
+      "shortname": "65",
+      "longname": "p2p-containerlab-topology-65",
+      "fqdn": "65.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/65",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/65",
+        "clab-node-name": "65",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "66": {
+      "index": "62",
+      "shortname": "66",
+      "longname": "p2p-containerlab-topology-66",
+      "fqdn": "66.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/66",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.35",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/66",
+        "clab-node-name": "66",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "67": {
+      "index": "63",
+      "shortname": "67",
+      "longname": "p2p-containerlab-topology-67",
+      "fqdn": "67.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/67",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.50",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/67",
+        "clab-node-name": "67",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "68": {
+      "index": "64",
+      "shortname": "68",
+      "longname": "p2p-containerlab-topology-68",
+      "fqdn": "68.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/68",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.16",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/68",
+        "clab-node-name": "68",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "69": {
+      "index": "65",
+      "shortname": "69",
+      "longname": "p2p-containerlab-topology-69",
+      "fqdn": "69.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/69",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.54",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/69",
+        "clab-node-name": "69",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "7": {
+      "index": "66",
+      "shortname": "7",
+      "longname": "p2p-containerlab-topology-7",
+      "fqdn": "7.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/7",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.6",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/7",
+        "clab-node-name": "7",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "70": {
+      "index": "67",
+      "shortname": "70",
+      "longname": "p2p-containerlab-topology-70",
+      "fqdn": "70.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/70",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.59",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/70",
+        "clab-node-name": "70",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "71": {
+      "index": "68",
+      "shortname": "71",
+      "longname": "p2p-containerlab-topology-71",
+      "fqdn": "71.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/71",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.36",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/71",
+        "clab-node-name": "71",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "72": {
+      "index": "69",
+      "shortname": "72",
+      "longname": "p2p-containerlab-topology-72",
+      "fqdn": "72.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/72",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.71",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/72",
+        "clab-node-name": "72",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "73": {
+      "index": "70",
+      "shortname": "73",
+      "longname": "p2p-containerlab-topology-73",
+      "fqdn": "73.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/73",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.74",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/73",
+        "clab-node-name": "73",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "74": {
+      "index": "71",
+      "shortname": "74",
+      "longname": "p2p-containerlab-topology-74",
+      "fqdn": "74.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/74",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.65",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/74",
+        "clab-node-name": "74",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "75": {
+      "index": "72",
+      "shortname": "75",
+      "longname": "p2p-containerlab-topology-75",
+      "fqdn": "75.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/75",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.38",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/75",
+        "clab-node-name": "75",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "8": {
+      "index": "73",
+      "shortname": "8",
+      "longname": "p2p-containerlab-topology-8",
+      "fqdn": "8.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/8",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.69",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/8",
+        "clab-node-name": "8",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
+    "9": {
+      "index": "74",
+      "shortname": "9",
+      "longname": "p2p-containerlab-topology-9",
+      "fqdn": "9.containerlab-topology.io",
+      "group": "",
+      "labdir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/9",
+      "kind": "linux",
+      "image": "image-testbed",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.100.100.17",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/9",
+        "clab-node-name": "9",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml",
+        "containerlab": "containerlab-topology",
+        "group": "peer",
+        "role": "receiver"
+      },
+      "port-bindings": [
+      ]
+    },
     "cadvisor": {
-      "index": "5",
+      "index": "75",
       "shortname": "cadvisor",
       "longname": "p2p-containerlab-topology-cadvisor",
       "fqdn": "cadvisor.containerlab-topology.io",
@@ -182,13 +2352,13 @@
       "image": "image-cadvisor",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.100.100.3",
+      "mgmt-ipv4-address": "172.100.100.68",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-cf3d2062b697",
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/cadvisor",
@@ -213,7 +2383,7 @@
       ]
     },
     "lectureStudioServer": {
-      "index": "6",
+      "index": "76",
       "shortname": "lectureStudioServer",
       "longname": "p2p-containerlab-topology-lectureStudioServer",
       "fqdn": "lectureStudioServer.containerlab-topology.io",
@@ -229,7 +2399,7 @@
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-cf3d2062b697",
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/lectureStudioServer",
@@ -256,7 +2426,7 @@
       ]
     },
     "prometheus": {
-      "index": "7",
+      "index": "77",
       "shortname": "prometheus",
       "longname": "p2p-containerlab-topology-prometheus",
       "fqdn": "prometheus.containerlab-topology.io",
@@ -272,7 +2442,7 @@
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-cf3d2062b697",
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/prometheus",
@@ -297,7 +2467,7 @@
       ]
     },
     "trackerPeer": {
-      "index": "8",
+      "index": "78",
       "shortname": "trackerPeer",
       "longname": "p2p-containerlab-topology-trackerPeer",
       "fqdn": "trackerPeer.containerlab-topology.io",
@@ -313,7 +2483,7 @@
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-cf3d2062b697",
+        "clab-mgmt-net-bridge": "br-a084254f3de7",
         "clab-node-group": "",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/ozcankaraca/Desktop/master-thesis-ozcankaraca/java-program-for-container/src/main/java/clab-containerlab-topology/trackerPeer",
@@ -343,13 +2513,13 @@
       "a": {
         "node": "lectureStudioServer",
         "interface": "eth1",
-        "mac": "aa:c1:ab:98:37:e1",
+        "mac": "aa:c1:ab:e0:66:32",
         "peer": "z"
       },
       "z": {
-        "node": "1",
+        "node": "44",
         "interface": "eth1",
-        "mac": "aa:c1:ab:d8:fa:5b",
+        "mac": "aa:c1:ab:b2:48:1b",
         "peer": "a"
       }
     },
@@ -357,13 +2527,13 @@
       "a": {
         "node": "lectureStudioServer",
         "interface": "eth2",
-        "mac": "aa:c1:ab:ec:f9:9b",
+        "mac": "aa:c1:ab:b9:58:c1",
         "peer": "z"
       },
       "z": {
-        "node": "2",
+        "node": "45",
         "interface": "eth1",
-        "mac": "aa:c1:ab:0c:13:ad",
+        "mac": "aa:c1:ab:5e:3c:eb",
         "peer": "a"
       }
     },
@@ -371,13 +2541,13 @@
       "a": {
         "node": "lectureStudioServer",
         "interface": "eth3",
-        "mac": "aa:c1:ab:38:26:90",
+        "mac": "aa:c1:ab:79:5a:5d",
         "peer": "z"
       },
       "z": {
-        "node": "3",
+        "node": "46",
         "interface": "eth1",
-        "mac": "aa:c1:ab:03:ff:90",
+        "mac": "aa:c1:ab:4f:d1:d1",
         "peer": "a"
       }
     },
@@ -385,27 +2555,1007 @@
       "a": {
         "node": "lectureStudioServer",
         "interface": "eth4",
-        "mac": "aa:c1:ab:56:18:df",
+        "mac": "aa:c1:ab:e7:a3:75",
         "peer": "z"
       },
       "z": {
-        "node": "4",
+        "node": "47",
         "interface": "eth1",
-        "mac": "aa:c1:ab:c1:62:c0",
+        "mac": "aa:c1:ab:64:8a:52",
         "peer": "a"
       }
     },
     {
       "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth5",
+        "mac": "aa:c1:ab:20:73:58",
+        "peer": "z"
+      },
+      "z": {
+        "node": "48",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:16:08:ba",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth6",
+        "mac": "aa:c1:ab:cd:fc:f4",
+        "peer": "z"
+      },
+      "z": {
+        "node": "49",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:5e:b0:cb",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth7",
+        "mac": "aa:c1:ab:3c:6e:41",
+        "peer": "z"
+      },
+      "z": {
+        "node": "50",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:a0:12:97",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth8",
+        "mac": "aa:c1:ab:1e:94:87",
+        "peer": "z"
+      },
+      "z": {
+        "node": "51",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:28:ca:cd",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth9",
+        "mac": "aa:c1:ab:3b:40:fb",
+        "peer": "z"
+      },
+      "z": {
+        "node": "52",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:86:7f:00",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth10",
+        "mac": "aa:c1:ab:b2:cf:b6",
+        "peer": "z"
+      },
+      "z": {
+        "node": "53",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:30:a3:41",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth11",
+        "mac": "aa:c1:ab:c1:e8:c5",
+        "peer": "z"
+      },
+      "z": {
+        "node": "10",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:bb:29:5b",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth12",
+        "mac": "aa:c1:ab:0b:5c:a4",
+        "peer": "z"
+      },
+      "z": {
+        "node": "54",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:a1:99:a4",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth13",
+        "mac": "aa:c1:ab:34:3f:df",
+        "peer": "z"
+      },
+      "z": {
+        "node": "11",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:8c:0f:86",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth14",
+        "mac": "aa:c1:ab:43:6d:c7",
+        "peer": "z"
+      },
+      "z": {
+        "node": "55",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:3c:92:f1",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth15",
+        "mac": "aa:c1:ab:65:00:23",
+        "peer": "z"
+      },
+      "z": {
+        "node": "12",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:74:0f:a4",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth16",
+        "mac": "aa:c1:ab:65:9c:04",
+        "peer": "z"
+      },
+      "z": {
+        "node": "56",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:71:8e:d5",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth17",
+        "mac": "aa:c1:ab:4e:9a:86",
+        "peer": "z"
+      },
+      "z": {
+        "node": "13",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:3b:c9:09",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth18",
+        "mac": "aa:c1:ab:96:3d:b8",
+        "peer": "z"
+      },
+      "z": {
+        "node": "57",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:73:e8:ff",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth19",
+        "mac": "aa:c1:ab:c5:f8:17",
+        "peer": "z"
+      },
+      "z": {
+        "node": "14",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:fa:81:84",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth20",
+        "mac": "aa:c1:ab:d2:e0:13",
+        "peer": "z"
+      },
+      "z": {
+        "node": "58",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:c5:16:dc",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth21",
+        "mac": "aa:c1:ab:37:6c:f7",
+        "peer": "z"
+      },
+      "z": {
+        "node": "15",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:2c:95:bf",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth22",
+        "mac": "aa:c1:ab:82:9b:09",
+        "peer": "z"
+      },
+      "z": {
+        "node": "59",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:a7:27:84",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth23",
+        "mac": "aa:c1:ab:91:cf:e7",
+        "peer": "z"
+      },
+      "z": {
+        "node": "16",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:36:c4:8a",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth24",
+        "mac": "aa:c1:ab:83:84:a8",
+        "peer": "z"
+      },
+      "z": {
+        "node": "17",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:3b:02:d2",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth25",
+        "mac": "aa:c1:ab:df:a8:fe",
+        "peer": "z"
+      },
+      "z": {
+        "node": "18",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:33:f5:ea",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth26",
+        "mac": "aa:c1:ab:60:23:d8",
+        "peer": "z"
+      },
+      "z": {
+        "node": "19",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:af:fe:2c",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth27",
+        "mac": "aa:c1:ab:e8:05:03",
+        "peer": "z"
+      },
+      "z": {
+        "node": "1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:bc:aa:a1",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth28",
+        "mac": "aa:c1:ab:f1:8e:55",
+        "peer": "z"
+      },
+      "z": {
+        "node": "2",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:16:3d:bd",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth29",
+        "mac": "aa:c1:ab:0d:ea:a9",
+        "peer": "z"
+      },
+      "z": {
+        "node": "3",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:bf:ac:d9",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth30",
+        "mac": "aa:c1:ab:c5:31:ee",
+        "peer": "z"
+      },
+      "z": {
         "node": "4",
-        "interface": "eth2",
-        "mac": "aa:c1:ab:b7:03:39",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:53:aa:82",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth31",
+        "mac": "aa:c1:ab:4e:34:4c",
         "peer": "z"
       },
       "z": {
         "node": "5",
         "interface": "eth1",
-        "mac": "aa:c1:ab:4f:b4:51",
+        "mac": "aa:c1:ab:2e:f7:fa",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth32",
+        "mac": "aa:c1:ab:93:25:0c",
+        "peer": "z"
+      },
+      "z": {
+        "node": "6",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:b2:ab:fe",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth33",
+        "mac": "aa:c1:ab:d7:a1:99",
+        "peer": "z"
+      },
+      "z": {
+        "node": "7",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:26:03:9c",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth34",
+        "mac": "aa:c1:ab:0e:28:a2",
+        "peer": "z"
+      },
+      "z": {
+        "node": "8",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:75:cc:bf",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth35",
+        "mac": "aa:c1:ab:8f:e8:78",
+        "peer": "z"
+      },
+      "z": {
+        "node": "9",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:56:5e:83",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth36",
+        "mac": "aa:c1:ab:6d:26:30",
+        "peer": "z"
+      },
+      "z": {
+        "node": "60",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:e2:01:a2",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth37",
+        "mac": "aa:c1:ab:a1:c3:31",
+        "peer": "z"
+      },
+      "z": {
+        "node": "61",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:34:d3:91",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth38",
+        "mac": "aa:c1:ab:d1:93:0e",
+        "peer": "z"
+      },
+      "z": {
+        "node": "62",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:6c:d4:d1",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth39",
+        "mac": "aa:c1:ab:11:a7:d1",
+        "peer": "z"
+      },
+      "z": {
+        "node": "63",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:77:69:03",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth40",
+        "mac": "aa:c1:ab:af:9d:3a",
+        "peer": "z"
+      },
+      "z": {
+        "node": "20",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:56:0c:bc",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth41",
+        "mac": "aa:c1:ab:6c:2b:42",
+        "peer": "z"
+      },
+      "z": {
+        "node": "64",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:4b:7d:e5",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth42",
+        "mac": "aa:c1:ab:d6:75:68",
+        "peer": "z"
+      },
+      "z": {
+        "node": "21",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:28:28:ac",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth43",
+        "mac": "aa:c1:ab:56:55:e8",
+        "peer": "z"
+      },
+      "z": {
+        "node": "65",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:89:b8:c5",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth44",
+        "mac": "aa:c1:ab:17:ae:50",
+        "peer": "z"
+      },
+      "z": {
+        "node": "22",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:95:57:3e",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth45",
+        "mac": "aa:c1:ab:80:1a:65",
+        "peer": "z"
+      },
+      "z": {
+        "node": "66",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:d8:1f:69",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth46",
+        "mac": "aa:c1:ab:5d:d5:06",
+        "peer": "z"
+      },
+      "z": {
+        "node": "23",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:cd:62:37",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth47",
+        "mac": "aa:c1:ab:6b:a8:98",
+        "peer": "z"
+      },
+      "z": {
+        "node": "67",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:d4:16:e6",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth48",
+        "mac": "aa:c1:ab:2a:5a:ff",
+        "peer": "z"
+      },
+      "z": {
+        "node": "24",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:64:4d:fb",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth49",
+        "mac": "aa:c1:ab:57:cf:2c",
+        "peer": "z"
+      },
+      "z": {
+        "node": "68",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:86:04:b9",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth50",
+        "mac": "aa:c1:ab:98:10:93",
+        "peer": "z"
+      },
+      "z": {
+        "node": "25",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:f7:c2:24",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth51",
+        "mac": "aa:c1:ab:94:ed:39",
+        "peer": "z"
+      },
+      "z": {
+        "node": "69",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:3f:97:c2",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth52",
+        "mac": "aa:c1:ab:b7:1a:41",
+        "peer": "z"
+      },
+      "z": {
+        "node": "26",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:40:13:b8",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth53",
+        "mac": "aa:c1:ab:bc:d0:53",
+        "peer": "z"
+      },
+      "z": {
+        "node": "27",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:13:e7:ad",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth54",
+        "mac": "aa:c1:ab:e9:e0:0d",
+        "peer": "z"
+      },
+      "z": {
+        "node": "28",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:fa:68:3c",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth55",
+        "mac": "aa:c1:ab:4a:77:1b",
+        "peer": "z"
+      },
+      "z": {
+        "node": "29",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:ee:98:b4",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth56",
+        "mac": "aa:c1:ab:49:d7:14",
+        "peer": "z"
+      },
+      "z": {
+        "node": "70",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:9d:d2:1e",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth57",
+        "mac": "aa:c1:ab:e7:8c:fd",
+        "peer": "z"
+      },
+      "z": {
+        "node": "71",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:09:63:23",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth58",
+        "mac": "aa:c1:ab:47:52:7d",
+        "peer": "z"
+      },
+      "z": {
+        "node": "72",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:ca:a7:af",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth59",
+        "mac": "aa:c1:ab:7d:04:e3",
+        "peer": "z"
+      },
+      "z": {
+        "node": "73",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:32:21:5b",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth60",
+        "mac": "aa:c1:ab:49:22:fb",
+        "peer": "z"
+      },
+      "z": {
+        "node": "30",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:f0:d2:3c",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth61",
+        "mac": "aa:c1:ab:b9:c0:c5",
+        "peer": "z"
+      },
+      "z": {
+        "node": "74",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:39:45:e1",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth62",
+        "mac": "aa:c1:ab:d2:a5:96",
+        "peer": "z"
+      },
+      "z": {
+        "node": "31",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:eb:b2:f9",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth63",
+        "mac": "aa:c1:ab:1e:c1:6a",
+        "peer": "z"
+      },
+      "z": {
+        "node": "75",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:c5:8a:6e",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth64",
+        "mac": "aa:c1:ab:06:59:fd",
+        "peer": "z"
+      },
+      "z": {
+        "node": "32",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:6b:b5:1a",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth65",
+        "mac": "aa:c1:ab:9f:ca:59",
+        "peer": "z"
+      },
+      "z": {
+        "node": "33",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:d6:44:1d",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth66",
+        "mac": "aa:c1:ab:69:47:e2",
+        "peer": "z"
+      },
+      "z": {
+        "node": "34",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:cc:08:26",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth67",
+        "mac": "aa:c1:ab:b6:4b:30",
+        "peer": "z"
+      },
+      "z": {
+        "node": "35",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:b8:83:d0",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth68",
+        "mac": "aa:c1:ab:3f:a9:b2",
+        "peer": "z"
+      },
+      "z": {
+        "node": "36",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:85:4f:05",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth69",
+        "mac": "aa:c1:ab:ba:d4:c0",
+        "peer": "z"
+      },
+      "z": {
+        "node": "37",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:cc:34:75",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth70",
+        "mac": "aa:c1:ab:80:b0:16",
+        "peer": "z"
+      },
+      "z": {
+        "node": "38",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:2b:3b:05",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth71",
+        "mac": "aa:c1:ab:b6:bb:48",
+        "peer": "z"
+      },
+      "z": {
+        "node": "39",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:a7:ce:45",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth72",
+        "mac": "aa:c1:ab:d7:73:d1",
+        "peer": "z"
+      },
+      "z": {
+        "node": "40",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:13:d5:37",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth73",
+        "mac": "aa:c1:ab:ff:5f:5b",
+        "peer": "z"
+      },
+      "z": {
+        "node": "41",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:d2:da:39",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth74",
+        "mac": "aa:c1:ab:58:3a:2a",
+        "peer": "z"
+      },
+      "z": {
+        "node": "42",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:c2:6a:68",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "lectureStudioServer",
+        "interface": "eth75",
+        "mac": "aa:c1:ab:3a:27:1e",
+        "peer": "z"
+      },
+      "z": {
+        "node": "43",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:f1:b1:03",
         "peer": "a"
       }
     }

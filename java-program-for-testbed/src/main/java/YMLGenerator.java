@@ -44,8 +44,8 @@ public class YMLGenerator {
     private static Map<String, String> peerEnvVariablesSuperPeerIP = new HashMap<>();
     private static int subnetCounter = 21;
 
-    private static int numberOfPeers = 5;
-    private static boolean useSuperPeers = true;
+    private static int numberOfPeers = 75;
+    private static boolean useSuperPeers = false;
 
     /**
      * The main method for generating a YML file to configure a network testbed.
@@ -300,6 +300,7 @@ public class YMLGenerator {
             fw.write("\n    prometheus:\n");
             fw.write("      kind: linux\n");
             fw.write("      image: image-prometheus\n");
+            fw.write("      mgmt-ipv4: 172.100.100.4\n");
             fw.write("      binds:\n");
             fw.write(
                     "       - " + basePath
