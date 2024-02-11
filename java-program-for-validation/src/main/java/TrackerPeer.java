@@ -1,5 +1,6 @@
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.time.LocalDateTime;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
@@ -57,6 +58,7 @@ public class TrackerPeer {
                         if (received == expectedNumberOfConfirmations) {
                             long duration = System.currentTimeMillis() - startTime;
                             System.out.println("Info: All confirmations received\n");
+                            System.out.println("Data Transfer End Time: " + LocalDateTime.now().toString());
                             System.out.println("Result: Total duration: " + duration + " ms");
                             break;
                         }

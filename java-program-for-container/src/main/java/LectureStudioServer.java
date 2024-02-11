@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -124,6 +125,7 @@ public class LectureStudioServer {
                 hasSentFirstConfirmation = true;
             }
         }
+        System.out.println("Data Transfer Start Time: " + LocalDateTime.now().toString());
 
         final int maxAttempts = 100000; // Maximale Anzahl der Versuche
         final long waitBetweenAttempts = 1000; // Wartezeit zwischen den Versuchen in Millisekunden
@@ -331,7 +333,7 @@ public class LectureStudioServer {
         }
 
         // Validation of he Network Characteristics
-        Thread.sleep(numberOfPeers * 30000);
+        //Thread.sleep(numberOfPeers * 30000);
         System.out.println("Info: Number Of Total Containers in the Testbed: " + numberOfPeers);
 
         List<String> formattedPeers = new ArrayList<>();
