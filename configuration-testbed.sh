@@ -40,7 +40,7 @@ IMAGE_TRACKER_PATH="$BASE_PATH/master-thesis-ozcankaraca/java-program-for-valida
 IMAGE_ANALYSING_MONITORING_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/data-for-analysing-monitoring/"
 
 # Path to the PDF files for data transfer
-PDF_FILES_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/PDF/"
+PDF_FILES_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/pdf-files/"
 DESTINATION_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/"
 DELETE_FILE_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/mydocument.pdf"
 
@@ -175,7 +175,7 @@ run_validation() {
                 min_bandwidth_error_rate=$(echo "$line" | awk '{print $5}')
                 ;;
         esac
-    done < <(mvn -q exec:java -Dexec.mainClass="$java_program_for_validation_class1" -Dexec.args="$number_of_peers")
+    done < <(mvn -q exec:java -Dexec.mainClass="$java_program_for_validation_class1" -Dexec.args="$number_of_peers $has_superpeer")
 }
 
 # Executing the testbed setup and validation process
@@ -184,7 +184,7 @@ run_validation
 
 # Check if the previous command was successful
 if [ $? -eq 0 ]; then
-    printf "\nSuccess: Proceeding\n"
+    printf "\Info: Proceeding\n"
 else
     # If the validation failed, restart the testbed and run validation 
     printf "Unsuccess: Some tests need to be repeated. Restarting the testbed and containerlab."

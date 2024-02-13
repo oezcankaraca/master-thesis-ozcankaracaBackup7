@@ -72,8 +72,8 @@ public class ConnectionDetails {
     }
 
     // Default number of peers, use of super-peer, choice of size pdf file
-    private static int numberOfPeers = 10;
-    private static boolean useSuperPeers = true;
+    private static int numberOfPeers = 5;
+    private static boolean useSuperPeers = false;
     private static int choiceOfPdfMB = 2;
 
     private static int sizeOfPDF;
@@ -130,16 +130,20 @@ public class ConnectionDetails {
 
         // Specify the path to the output data with or without super-peer
         String pathToJsonOutput;
+        String pathToPeerInfoFile;
         if (useSuperPeers) {
             pathToJsonOutput = basePath + "/data-for-testbed/outputs-with-superpeer/output-data-" + numberOfPeers
                     + ".json";
+            pathToPeerInfoFile        = basePath + "/data-for-testbed/connection-details/with-superpeer/connection-details-"
+                + numberOfPeers + ".json";
         } else {
             pathToJsonOutput = basePath + "/data-for-testbed/outputs-without-superpeer/output-data-" + numberOfPeers
                     + ".json";
+            pathToPeerInfoFile = basePath + "/data-for-testbed/connection-details/without-superpeer/connection-details-"
+                    + numberOfPeers + ".json";
         }
 
-        String pathToPeerInfoFile = basePath + "/data-for-testbed/connection-details/connection-details-"
-                + numberOfPeers + ".json";
+         
         String pathToJsonInput = basePath + "/data-for-testbed/inputs/input-data-" + numberOfPeers + ".json";
 
         System.out.println("Step Started: Combining connection details\n");

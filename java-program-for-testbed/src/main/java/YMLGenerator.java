@@ -46,6 +46,7 @@ public class YMLGenerator {
 
     private static int numberOfPeers = 5;
     private static boolean useSuperPeers = true;
+    private static String pathToConnectionDetails;
 
     /**
      * The main method for generating a YML file to configure a network testbed.
@@ -79,12 +80,17 @@ public class YMLGenerator {
         try {
 
             String pathToOutputData;
+            
             if (useSuperPeers) {
                 pathToOutputData = basePath + "/data-for-testbed/outputs-with-superpeer/output-data-" + numberOfPeers
                         + ".json";
+                pathToConnectionDetails = basePath + "/data-for-testbed/connection-details/with-superpeer/connection-details-" + numberOfPeers
+                        + ".json:/app/connection-details-" + numberOfPeers + ".json";
             } else {
                 pathToOutputData = basePath + "/data-for-testbed/outputs-without-superpeer/output-data-" + numberOfPeers
                         + ".json";
+                pathToConnectionDetails = basePath + "/data-for-testbed/connection-details/without-superpeer/connection-details-" + numberOfPeers
+                        + ".json:/app/connection-details-" + numberOfPeers + ".json";
             }
 
             // Create a YMLGenerator instance with the path to the output data.
@@ -210,8 +216,7 @@ public class YMLGenerator {
             fw.write(
                     "        - " + basePath + "/data-for-testbed/mydocument.pdf:/app/mydocument.pdf\n");
             fw.write(
-                    "        - " + basePath + "/data-for-testbed/connection-details/connection-details-"
-                            + numberOfPeers + ".json:/app/connection-details-" + numberOfPeers + ".json\n");
+                    "        - " + pathToConnectionDetails + "\n");
             fw.write(
                     "        - " + basePath
                             + "/data-for-testbed/script-for-connection/connection-details-superpeer.sh:/app/connection-details-superpeer.sh\n");
@@ -357,8 +362,7 @@ public class YMLGenerator {
             // Bind and execution commands for normal peers
             fw.write("      binds:\n");
             fw.write(
-                    "        - " + basePath + "/data-for-testbed/connection-details/connection-details-" + numberOfPeers
-                            + ".json:/app/connection-details-" + numberOfPeers + ".json\n");
+                    "        - " + pathToConnectionDetails + "\n");
             fw.write(
                     "        - " + basePath
                             + "/data-for-testbed/script-for-connection/connection-details-superpeer.sh:/app/connection-details-superpeer.sh\n");

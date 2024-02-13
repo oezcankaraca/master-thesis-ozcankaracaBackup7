@@ -122,7 +122,7 @@ public class ConnectionAnalysis {
         Set<String> peerNames = new HashSet<>();
 
         // Log the start of connection data processing
-        printAndWrite("Info: Processing connection data.\n");
+        printAndWrite("Info: Processing connection data.");
         for (int i = 0; i < connections.length(); i++) {
             JSONObject connection = connections.getJSONObject(i);
             String source = connection.getString("sourceName");
@@ -173,7 +173,7 @@ public class ConnectionAnalysis {
             missingConnections.forEach(connection -> printAndWrite(connection));
         }
         
-        System.out.println("\nStep: Analysing connection details is done.\n"); 
+        System.out.println("\nStep Done: Analysing connection details is done.\n"); 
 
         // Write analysis results to the file and close the stream
         fileOutput.close();

@@ -238,7 +238,7 @@ public class NetworkConfigParser {
                     + ".json";
         }
 
-        System.out.println("\nStep: Integrating P2P algorithm\n");
+        System.out.println("Step Started: Integrating P2P algorithm\n");
 
         // Initializes the NetworkConfigParser with the path to the output data
         NetworkConfigParser parser = new NetworkConfigParser(pathToOutputData);
@@ -250,7 +250,7 @@ public class NetworkConfigParser {
         System.out.println(
                 "\n---------------------------------------------------------------------------------------------------------------------------------------------\n");
 
-        System.out.println("\nInfo: Retrieving connections originating from lectureStudioServer.");
+        System.out.println("Info: Retrieving connections originating from lectureStudioServer.");
         // Filters connections that originate from the lectureStudioServer
         List<PeerConnection> connectionsFromServer = parser.getPeerConnections().stream()
                 .filter(connection -> "lectureStudioServer".equals(connection.getSourceName()))
@@ -260,7 +260,7 @@ public class NetworkConfigParser {
                 .forEach(connection -> System.out.println("lectureStudioServer -> " + connection.getTargetName()));
         System.out.println(
                 "\n---------------------------------------------------------------------------------------------------------------------------------------------\n");
-        System.out.println("\nInfo: Analyzing connections from Superpeers to Peers.");
+        System.out.println("Info: Analyzing connections from Superpeers to Peers.");
         // Retrieves the mapping of superpeers to their connected peers
         Map<String, List<String>> superpeerConnections = parser.getSuperpeerConnections();
         System.out.println("\n--List of Connections from Superpeers to Peers:--\n");
@@ -268,6 +268,6 @@ public class NetworkConfigParser {
         System.out.println(
                 "\n---------------------------------------------------------------------------------------------------------------------------------------------\n");
 
-        System.out.println("\nStep Done: Integrating P2P algorithm is done.\n");
+        System.out.println("Step Done: Integrating P2P algorithm is done.\n");
     }
 }

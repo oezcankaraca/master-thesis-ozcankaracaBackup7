@@ -56,6 +56,7 @@ public class ConnectionQuality extends YMLParserForConnectionQuality {
     static String basePath = homeDirectory + "/Desktop/master-thesis-ozcankaraca";
 
     private static int numberOfPeers = 5;
+    private static boolean useSuperPeers = false;
 
     /**
      * Main method to initiate network validation.
@@ -73,6 +74,10 @@ public class ConnectionQuality extends YMLParserForConnectionQuality {
             } catch (NumberFormatException e) {
                 System.err.println("Error: Argument must be an integer. Defaulting to 10.");
             }
+        }
+
+        if (args.length > 1) {
+            useSuperPeers = Boolean.parseBoolean(args[1]);
         }
 
         // Setting up connection information file path.
@@ -260,10 +265,17 @@ public class ConnectionQuality extends YMLParserForConnectionQuality {
             double measuredBandwidth = extractAndPrintIperfBandwidth(iperfResult);
             double measuredLatency = extractAndPrintPingLatency(pingResult);
 
-            // Load applied (expected) values from a configuration file.
-            String CONNECTION_DETAILS_FILE_DIR = basePath + "/data-for-testbed/connection-details/connection-details-"
+        // Load applied (expected) values from a configuration file.
+        String pathToConnectionDetails;
+        if (useSuperPeers) {
+            pathToConnectionDetails        = basePath + "/data-for-testbed/connection-details/with-superpeer/connection-details-"
+                + numberOfPeers + ".json";
+        } else {
+            pathToConnectionDetails = basePath + "/data-for-testbed/connection-details/without-superpeer/connection-details-"
                     + numberOfPeers + ".json";
-            Object[] appliedValues = extractData(sourcePeerNumber, targetPeerNumber, CONNECTION_DETAILS_FILE_DIR);
+        }
+
+            Object[] appliedValues = extractData(sourcePeerNumber, targetPeerNumber, pathToConnectionDetails);
 
             int appliedBandwidth = (int) ((Integer) appliedValues[0]).doubleValue();
             double appliedLatency = Double.parseDouble((String) appliedValues[1]);
@@ -287,18 +299,18 @@ public class ConnectionQuality extends YMLParserForConnectionQuality {
             } else {
                 attempts++;
                 if (attempts < 3) {
-                    System.out.println("\nRetry: Test failed, retrying... (Attempt " + (attempts + 1) + ")");
+                    System.out.println("\nError: Test failed, retrying... (Attempt " + (attempts + 1) + ")");
                 }
             }
         }
 
         // Final decision based on test success or failure after all attempts.
         if (testSuccessful) {
-            System.out.println("\nInfo: Test from " + sourcePeer + " to " + targetPeer + " successful after "
+            System.out.println("\nSuccess: Test from " + sourcePeer + " to " + targetPeer + " successful after "
                     + (attempts + 1) + " attempts.");
             return true;
         } else {
-            System.out.println("\nError: Test from " + sourcePeer + " to " + targetPeer + " failed after 3 attempts.");
+            System.out.println("\nUnsuccess: Test from " + sourcePeer + " to " + targetPeer + " failed after 3 attempts.");
             return false;
         }
     }
@@ -623,7 +635,6 @@ public class ConnectionQuality extends YMLParserForConnectionQuality {
         } else {
             System.out.println("\nInfo: Error rate is below " + acceptableLatencyErrorRate
                     + "% for Latency and 5% for Bandwidth.");
-            System.out.println("Info: The test from " + sourcePeer + " to " + targetPeer + " is successful.");
         }
 
         // Pause to ensure the message is read before proceeding
