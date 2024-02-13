@@ -113,7 +113,7 @@ public class CompareFiles {
             e.printStackTrace();
         }
 
-        System.out.println("\nStep Done: Comparing hash values is done.\n");
+        System.out.println("Step Done: Comparing hash values is done.\n");
     }
 
     /**
@@ -180,7 +180,7 @@ public class CompareFiles {
             }
         }
         System.out.println(
-                "---------------------------------------------------------------------------------------------------------------------------------------------\n\n");
+                "---------------------------------------------------------------------------------------------------------------------------------------------\n");
 
         // If no file was found in the container, return false
         if (!fileExists) {

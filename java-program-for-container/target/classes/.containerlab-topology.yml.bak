@@ -37,7 +37,7 @@ topology:
         group: server
       binds:
         - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/mydocument.pdf:/app/mydocument.pdf
-        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/connection-details/connection-details-5.json:/app/connection-details-5.json
+        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/connection-details/with-superpeer/connection-details-5.json:/app/connection-details-5.json
         - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/script-for-connection/connection-details-superpeer.sh:/app/connection-details-superpeer.sh
       exec:
         - sleep 5
@@ -126,7 +126,7 @@ topology:
         role: receiver/sender
         group: superpeer
       binds:
-        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/connection-details/connection-details-5.json:/app/connection-details-5.json
+        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/connection-details/with-superpeer/connection-details-5.json:/app/connection-details-5.json
         - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/script-for-connection/connection-details-superpeer.sh:/app/connection-details-superpeer.sh
       exec:
         - sleep 5

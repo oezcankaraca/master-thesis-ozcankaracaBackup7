@@ -122,7 +122,7 @@ public class LectureStudioServer {
         synchronized (confirmationLock) {
             if (!hasSentFirstConfirmation) {
                 sendConfirmationToTrackerPeer();
-                System.out.println("Data Transfer Start Time: " + LocalDateTime.now().toString());
+                System.out.println("Info: Data Transfer Start Time: " + LocalDateTime.now().toString());
                 hasSentFirstConfirmation = true;
             }
         }
@@ -152,14 +152,14 @@ public class LectureStudioServer {
                 isBound = true; 
             } catch (Exception e) {
                 System.err.println(
-                        "Bind attempt " + (attempt + 1) + " failed for address " + ipAddress + ": " + e.getMessage());
+                        "Error: Bind attempt " + (attempt + 1) + " failed for address " + ipAddress + ": " + e.getMessage());
                 attempt++;
                 if (attempt < maxAttempts) {
                     try {
                         Thread.sleep(waitBetweenAttempts);
                     } catch (InterruptedException ie) {
                         Thread.currentThread().interrupt();
-                        throw new Exception("Interrupted while waiting to retry bind", ie);
+                        throw new Exception("Error: Interrupted while waiting to retry bind", ie);
                     }
                 }
             } finally {
@@ -172,7 +172,7 @@ public class LectureStudioServer {
         }
 
         if (!isBound) {
-            throw new Exception("Unable to bind to address " + ipAddress + " after " + maxAttempts + " attempts.");
+            throw new Exception("Error: Unable to bind to address " + ipAddress + " after " + maxAttempts + " attempts.");
         }
 
         // Wait for the completion of file transfer
@@ -341,7 +341,7 @@ public class LectureStudioServer {
             formattedPeers.add(prefixOfContainer + "-" + peer);
         }
         String joinedPeers = String.join(", ", formattedPeers);
-        System.out.println("Info: The containers that will receive the data from lectureStudioServer:");
+        System.out.println("--The containers that will receive the data from lectureStudioServer:--");
         System.out.println(joinedPeers);
 
         int port = 7070;

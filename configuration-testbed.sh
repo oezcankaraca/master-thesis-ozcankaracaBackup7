@@ -184,7 +184,7 @@ run_validation
 
 # Check if the previous command was successful
 if [ $? -eq 0 ]; then
-    printf "\Info: Proceeding\n"
+    printf "\nInfo: Proceeding\n"
 else
     # If the validation failed, restart the testbed and run validation 
     printf "Unsuccess: Some tests need to be repeated. Restarting the testbed and containerlab."
@@ -477,7 +477,7 @@ while IFS= read -r line; do
 done < <(mvn -q exec:java -Dexec.mainClass="$java_program_for_validation_class2" -Dexec.args="$NUMBER_OF_PEERS_ARG")
 sleep 5
 
-printf "\nStep Started: Cleaning up the testbed.\n"
+printf "Step Started: Cleaning up the testbed.\n"
 
 # Destroying the Containerlab setup and cleaning up the environment
 printf "\nInfo: Destroying Containerlab and cleaning up the environment.\n\n"

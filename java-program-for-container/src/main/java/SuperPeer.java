@@ -329,7 +329,7 @@ public class SuperPeer {
             formattedPeers.add(prefixOfContainer + "-" + peer);
         }
         String joinedPeers = String.join(", ", formattedPeers);
-        System.out.println("The containers that will receive the data from lectureStudioServer:");
+        System.out.println("--The containers that will receive the data from lectureStudioServer:--");
         System.out.println(joinedPeers);
 
         SuperPeer superPeer = new SuperPeer(serverPort, clientPort, filePathToSend, filePathToReceive);
