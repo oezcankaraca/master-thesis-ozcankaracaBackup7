@@ -589,15 +589,15 @@ public class ConnectionQuality extends YMLParserForConnectionQuality {
 
         // Set acceptable error rates based on bandwidth ranges.
         if (measuredBandwidth < 100) {
-            acceptableLatencyErrorRate = 35;
+            acceptableLatencyErrorRate = 50;
         } else if (measuredBandwidth >= 100 && measuredBandwidth <= 200) {
-            acceptableLatencyErrorRate = 30;
+            acceptableLatencyErrorRate = 40;
         } else if (measuredBandwidth >= 200 && measuredBandwidth <= 500) {
-            acceptableLatencyErrorRate = 25;
+            acceptableLatencyErrorRate = 35;
         } else if (measuredBandwidth >= 500 && measuredBandwidth <= 1000) {
-            acceptableLatencyErrorRate = 20;
+            acceptableLatencyErrorRate = 30;
         } else if (measuredBandwidth >= 1000 && measuredBandwidth <= 3000) {
-            acceptableLatencyErrorRate = 15;
+            acceptableLatencyErrorRate = 20;
         } else {
             acceptableLatencyErrorRate = 10;
         }

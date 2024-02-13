@@ -12,10 +12,14 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 /**
- * The CompareFiles class is designed to verify the integrity of files across multiple Docker containers.
- * It achieves this by comparing the SHA-256 hash values of files located in different containers against
- * a reference hash value of an original file. This class is useful in scenarios where consistency and
- * data integrity of files distributed across multiple containers need to be ensured.
+ * The CompareFiles class is designed to verify the integrity of files across
+ * multiple Docker containers.
+ * It achieves this by comparing the SHA-256 hash values of files located in
+ * different containers against
+ * a reference hash value of an original file. This class is useful in scenarios
+ * where consistency and
+ * data integrity of files distributed across multiple containers need to be
+ * ensured.
  *
  * @author Özcan Karaca
  */
@@ -33,10 +37,13 @@ public class CompareFiles {
     private static DockerClient dockerClient;
 
     /*
-     * The main method initializes the process by defining container names, file paths,
-     * and calculating the hash of an original file. It then iterates through each specified container,
-     * checking if the files exist and comparing their hash values against the  original file's hash.
-     * This provides detailed output about the hash comparison results, 
+     * The main method initializes the process by defining container names, file
+     * paths,
+     * and calculating the hash of an original file. It then iterates through each
+     * specified container,
+     * checking if the files exist and comparing their hash values against the
+     * original file's hash.
+     * This provides detailed output about the hash comparison results,
      * including whether the hashes match or not.
      */
 
@@ -85,10 +92,13 @@ public class CompareFiles {
 
             // Check and compare hashes for each container
             for (String containerName : containerNames) {
-                if (!containerName.equals("p2p-containerlab-topology-trackerPeer")
-                        && !containerName.equals("p2p-containerlab-topology-prometheus")
-                        && !containerName.equals("p2p-containerlab-topology-grafana")
-                        && !containerName.equals("p2p-containerlab-topology-cadvisor")) {
+                // Überprüfe, ob der Containername dem Muster p2p-containerlab-topology-[1-150]
+                // oder p2p-containerlab-topology-lectureStudioServer entspricht
+                boolean isTargetContainer = containerName
+                        .matches("p2p-containerlab-topology-(1[0-4][0-9]|150|[1-9]\\d?)")
+                        || containerName.equals("p2p-containerlab-topology-lectureStudioServer");
+
+                if (isTargetContainer) {
                     allHashesMatch &= checkAndCompareHashes(containerName, containerPaths, originalHash);
                 }
             }
@@ -119,9 +129,11 @@ public class CompareFiles {
     }
 
     /**
-     * Checks and compares the hash of files within a container against an original hash.
+     * Checks and compares the hash of files within a container against an original
+     * hash.
      * Iterates through file paths within the container, checks if each file exists,
-     * then compares its hash with the original hash, stopping after finding the first existing file.
+     * then compares its hash with the original hash, stopping after finding the
+     * first existing file.
      *
      * @param containerName  The name of the container where the files are located.
      * @param containerPaths An array of paths to the files within the container.
@@ -134,10 +146,11 @@ public class CompareFiles {
     private static boolean checkAndCompareHashes(String containerName, String[] containerPaths, String originalHash)
             throws IOException, InterruptedException {
 
-        if (containerName.equals("p2p-containerlab-topology-trackerPeer")
-                && containerName.equals("p2p-containerlab-topology-prometheus")
-                && containerName.equals("p2p-containerlab-topology-grafana")
-                && containerName.equals("p2p-containerlab-topology-cadvisor")) {
+            boolean isTargetContainer = containerName
+                .matches("p2p-containerlab-topology-(1[0-4][0-9]|150|[1-9]\\d?)")
+                || containerName.equals("p2p-containerlab-topology-lectureStudioServer");
+
+        if (!isTargetContainer) {
             return true;
         }
         boolean fileExists = false;
@@ -180,7 +193,8 @@ public class CompareFiles {
 
     /**
      * Checks if a file exists within a Docker container.
-     * Executes a command in the Docker container to check if a specified file path exists.
+     * Executes a command in the Docker container to check if a specified file path
+     * exists.
      *
      * @param containerName     The name of the Docker container.
      * @param containerFilePath The file path within the container to be checked.
@@ -190,10 +204,6 @@ public class CompareFiles {
      */
     private static boolean doesFileExistInContainer(String containerName, String containerFilePath)
             throws IOException, InterruptedException {
-
-        if (containerName.equals("p2p-containerlab-topology-centralManagementServer")) {
-            return true;
-        }
 
         String[] checkCommand = {
                 "docker", "exec", containerName, "sh", "-c",
@@ -214,11 +224,13 @@ public class CompareFiles {
 
     /**
      * Calculates the SHA-256 hash of a file within a Docker container.
-     * Executes a command in the container to generate the hash of the specified file.
+     * Executes a command in the container to generate the hash of the specified
+     * file.
      *
      * @param containerName     The name of the Docker container.
      * @param containerFilePath The file path within the container to be hashed.
-     * @return The SHA-256 hash of the file as a String, or an error message if the process fails.
+     * @return The SHA-256 hash of the file as a String, or an error message if the
+     *         process fails.
      */
     private static String getContainerFileHash(String containerName, String containerFilePath)
             throws IOException, InterruptedException {
@@ -250,7 +262,8 @@ public class CompareFiles {
     }
 
     /**
-     * Calculates the SHA-256 hash of a local file, and reads the file and computes its SHA-256 hash.
+     * Calculates the SHA-256 hash of a local file, and reads the file and computes
+     * its SHA-256 hash.
      *
      * @param filePath The path of the file to be hashed.
      * @return The SHA-256 hash of the file as a String.
@@ -271,7 +284,7 @@ public class CompareFiles {
     }
 
     /**
-     * Converts a byte array into a hexadecimal string. 
+     * Converts a byte array into a hexadecimal string.
      * Useful for representing hash values in a readable format.
      *
      * @param bytes The byte array to be converted.
@@ -279,19 +292,19 @@ public class CompareFiles {
      */
     public static String bytesToHex(byte[] bytes) {
         StringBuilder hexString = new StringBuilder(); // StringBuilder to accumulate the hex values
-        
+
         for (byte b : bytes) { // Iterate over each byte in the array
 
             // Convert byte to hex, masking with 0xff to keep it positive
-            String hex = Integer.toHexString(0xff & b); 
-            
+            String hex = Integer.toHexString(0xff & b);
+
             if (hex.length() == 1) { // If hex string is a single digit
                 hexString.append('0'); // Append '0' to make it two digits
             }
-            
+
             hexString.append(hex); // Append the hex string for the current byte
         }
-        
+
         return hexString.toString(); // Return the complete hex string
     }
 }

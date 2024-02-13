@@ -105,7 +105,7 @@ done < "$JAVA_OUTPUT_FILE_PATH"
 
 rm "$JAVA_OUTPUT_FILE_PATH"
 
-printf "\n--Calculated Transfer Times for Container--\n"
+printf "\n--Calculated transfer times for Container--\n\n"
 
 for container_name in "${!calculated_times[@]}"; do
     echo "Container $container_name: ${calculated_times[$container_name]} ms"
@@ -132,8 +132,6 @@ printf "\nStep Done: Combining connection details is done.\n"
     cd "$IMAGE_ANALYSING_MONITORING_PATH"
     printf "\nInfo: Creating Docker image for analysing and monitoring.\n"
     #docker build -f dockerfile.cadvisor -t image-cadvisor .
-    #sleep 5
-    #docker build -f dockerfile.grafana -t image-grafana .
     #sleep 5
     #docker build -f dockerfile.prometheus -t image-prometheus .
     
@@ -192,11 +190,11 @@ else
     printf "Unsuccess: Some tests need to be repeated. Restarting the testbed and containerlab."
 
     printf "Info: Destroying Containerlab and cleaning up the environment."
-    sudo containerlab destroy -t "$CONTAINERLAB_YML" --cleanup
+    #sudo containerlab destroy -t "$CONTAINERLAB_YML" --cleanup
    
     # Executing the testbed setup and validation process again
-    testbed_and_containerlab
-    run_validation
+    #testbed_and_containerlab
+    #run_validation
 fi
 
 printf "\nInfo: Validation is done.\n"
@@ -240,7 +238,8 @@ for id in $container_ids; do
             continue 
         fi
         
-    if [[ "$container_name" == "p2p-containerlab-topology-grafana" || \
+    if [[ "$container_name" == "java-grafana-1" || \
+    	  "$container_name" == "java-renderer-1" || \
           "$container_name" == "p2p-containerlab-topology-prometheus" || \
           "$container_name" == "p2p-containerlab-topology-cadvisor" ]]; then
         continue 
@@ -279,7 +278,8 @@ done
     if [[ "$container_name" == "p2p-containerlab-topology-lectureStudioServer" || \
           "$container_name" == "p2p-containerlab-topology-trackerPeer" || \
           "$container_name" == "p2p-containerlab-topology-cadvisor" || \
-          "$container_name" == "p2p-containerlab-topology-grafana" || \
+          "$container_name" == "java-grafana-1" || \
+    	  "$container_name" == "java-renderer-1" || \
           "$container_name" == "p2p-containerlab-topology-prometheus" ]]; then
         continue
     fi
@@ -493,11 +493,10 @@ if [ "$enable_cleanup_for_image" == "true" ]; then
         printf "Info: All Containers have stopped.\n\n"
         printf "Deleting Docker image:\n"
 
-        docker image rm image-testbed
-        docker image rm image-tracker
-        docker image rm image-cadvisor
-        docker image rm image-grafana
-        docker image rm image-prometheus
+        #docker image rm image-testbed
+        #docker image rm image-tracker
+        #docker image rm image-cadvisor
+        #docker image rm image-prometheus
         printf "\nInfo: Docker image successfully deleted."
     else
         echo "Error: There are still running Containers. Cannot delete Docker image."

@@ -122,13 +122,13 @@ public class LectureStudioServer {
         synchronized (confirmationLock) {
             if (!hasSentFirstConfirmation) {
                 sendConfirmationToTrackerPeer();
+                System.out.println("Data Transfer Start Time: " + LocalDateTime.now().toString());
                 hasSentFirstConfirmation = true;
             }
         }
-        System.out.println("Data Transfer Start Time: " + LocalDateTime.now().toString());
-
-        final int maxAttempts = 100000; // Maximale Anzahl der Versuche
-        final long waitBetweenAttempts = 1000; // Wartezeit zwischen den Versuchen in Millisekunden
+        
+        final int maxAttempts = 100000;
+        final long waitBetweenAttempts = 1000; 
         boolean isBound = false;
         int attempt = 0;
 
@@ -149,7 +149,7 @@ public class LectureStudioServer {
 
                 ChannelFuture f = b.bind(InetAddress.getByName(ipAddress), port).sync();
                 f.channel().closeFuture().sync();
-                isBound = true; // Wenn das Binden erfolgreich war
+                isBound = true; 
             } catch (Exception e) {
                 System.err.println(
                         "Bind attempt " + (attempt + 1) + " failed for address " + ipAddress + ": " + e.getMessage());
@@ -333,7 +333,7 @@ public class LectureStudioServer {
         }
 
         // Validation of he Network Characteristics
-        //Thread.sleep(numberOfPeers * 30000);
+        Thread.sleep(numberOfPeers * 30000);
         System.out.println("Info: Number Of Total Containers in the Testbed: " + numberOfPeers);
 
         List<String> formattedPeers = new ArrayList<>();

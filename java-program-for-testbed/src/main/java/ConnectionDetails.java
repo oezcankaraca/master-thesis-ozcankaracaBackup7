@@ -195,7 +195,7 @@ public class ConnectionDetails {
     }
 
     private static void printDataTransferTimes(Map<String, Integer> bandwidthAllocation, int fileSizeBytes) {
-        System.out.println("\n--Data Transfer Times for connections--\n");
+        System.out.println("\n--Data transfer times for connections--\n");
         for (Map.Entry<String, Integer> entry : bandwidthAllocation.entrySet()) {
             String connection = entry.getKey();
             Integer bandwidthKbps = entry.getValue();

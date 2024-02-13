@@ -8,10 +8,10 @@
 public class DataTransferTimeCalculator {
     public static void main(String[] args) {
         // Data size in bytes.
-        long dataSizeBytes = 10705702; // Example file size
+        long dataSizeBytes = 2239815; // Example file size
         
         // Network speed in Kbps.
-        int speedKbps = 5732; // Example network speed
+        int speedKbps = 761; // Example network speed
         
         // Convert speed to Kbytes/s from Kbps.
         double speedKbytesPerSecond = speedKbps / 8.0;

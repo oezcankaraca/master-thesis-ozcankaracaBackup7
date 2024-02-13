@@ -155,14 +155,6 @@ topology:
         - chmod +x /app/connection-details-peer.sh
         - ./connection-details-peer.sh
 
-    prometheus:
-      kind: linux
-      image: image-prometheus
-      binds:
-       - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/data-for-analysing-monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
-      ports:
-        - "9090:9090"
-
     cadvisor:
       kind: linux
       image: image-cadvisor
@@ -174,11 +166,14 @@ topology:
       ports:
         - "8080:8080"
 
-    grafana:
+    prometheus:
       kind: linux
-      image: image-grafana
+      image: image-prometheus
+      mgmt-ipv4: 172.100.100.4
+      binds:
+       - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/data-for-analysing-monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
       ports:
-       - "3000:3000"
+        - "9090:9090"
   links:
     - endpoints: [lectureStudioServer:eth1, 1:eth1]
     - endpoints: [lectureStudioServer:eth2, 2:eth1]
