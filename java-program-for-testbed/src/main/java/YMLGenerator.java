@@ -44,7 +44,7 @@ public class YMLGenerator {
     private static Map<String, String> peerEnvVariablesSuperPeerIP = new HashMap<>();
     private static int subnetCounter = 21;
 
-    private static int numberOfPeers = 5;
+    private static int numberOfPeers = 50;
     private static boolean useSuperPeers = true;
     private static String pathToConnectionDetails;
 
@@ -290,7 +290,7 @@ public class YMLGenerator {
             }
 
             // Configuration for the cadvisor tool
-            /** fw.write("\n    cadvisor:\n");
+            fw.write("\n    cadvisor:\n");
             fw.write("      kind: linux\n");
             fw.write("      image: image-cadvisor\n");
             fw.write("      binds:\n");
@@ -311,7 +311,7 @@ public class YMLGenerator {
                     "       - " + basePath
                             + "/data-for-testbed/data-for-analysing-monitoring/prometheus.yml:/etc/prometheus/prometheus.yml\n");
             fw.write("      ports:\n");
-            fw.write("        - \"9090:9090\"\n"); **/
+            fw.write("        - \"9090:9090\"\n"); 
 
             // Append extra nodes if required.
             if (!includeExtraNodes) {

@@ -333,7 +333,7 @@ public class LectureStudioServer {
         }
 
         // Validation of he Network Characteristics
-        Thread.sleep(numberOfPeers * 30000);
+        //Thread.sleep(numberOfPeers * 30000);
         System.out.println("Info: Number Of Total Containers in the Testbed: " + numberOfPeers);
 
         List<String> formattedPeers = new ArrayList<>();

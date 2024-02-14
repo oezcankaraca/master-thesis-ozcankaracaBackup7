@@ -118,7 +118,7 @@ public class GeneratorOfNetworkTopology {
         }
 
         // Define the path for the JSON file that will represent the network topology
-        String pathToInputData = basePath + "/data-for-testbed/inputs/input-10/input-data-" + numberOfPeers + ".json";
+        String pathToInputData = basePath + "/data-for-testbed/inputs-new/input-data-" + numberOfPeers + ".json";
 
         System.out.println("Step Started: Generating network topology.\n");
 
