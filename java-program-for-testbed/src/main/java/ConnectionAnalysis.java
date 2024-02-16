@@ -88,7 +88,7 @@ public class ConnectionAnalysis {
         // Define the base path for the master thesis's directory
         String basePath = homeDirectory + "/Desktop/master-thesis-ozcankaraca";
         // Define the path for the network topology
-        String pathToInputData = basePath + "/data-for-testbed/inputs-new/input-data-" + numberOfPeers + ".json";
+        String pathToInputData = basePath + "/data-for-testbed/inputs/input-data-" + numberOfPeers + ".json";
        
         fileOutput = new PrintStream(basePath + "/data-for-testbed/results/input-info/input-info-" + numberOfPeers + ".txt");
 

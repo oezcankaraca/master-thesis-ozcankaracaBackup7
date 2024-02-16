@@ -32,7 +32,7 @@ public class CompareFiles {
         Logger.getRootLogger().setLevel(Level.ERROR);
     }
 
-    private static int numberOfPeers = 10;
+    private static int numberOfPeers = 20;
 
     private static DockerClient dockerClient;
 

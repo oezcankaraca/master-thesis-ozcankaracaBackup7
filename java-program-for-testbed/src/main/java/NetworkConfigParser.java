@@ -201,7 +201,7 @@ public class NetworkConfigParser {
                 .collect(Collectors.toList());
     }
 
-    private static int numberOfPeers = 10;
+    private static int numberOfPeers = 35;
     private static boolean useSuperPeers = true;
 
     /**
