@@ -91,18 +91,29 @@ testbed_and_containerlab() {
     mvn -q exec:java -Dexec.mainClass="$java_program_for_testbed_class3" -Dexec.args="$number_of_peers $has_superpeer"
     sleep 5
     
+# Execute the Java class and save the output to a temporary file
 JAVA_OUTPUT_FILE_PATH=$(mktemp)
 mvn -q exec:java -Dexec.mainClass="$java_program_for_testbed_class4" -Dexec.args="$number_of_peers $has_superpeer $choice_of_pdf_mb" | tee "$JAVA_OUTPUT_FILE_PATH"
 
+# Initialize a variable to store the smallest bandwidth
+smallest_bandwidth=0
 
+# Read the temporary file and search for the line with the smallest bandwidth
 while IFS= read -r line; do
     if [[ "$line" =~ ([0-9]+):[[:space:]]+([0-9]+)[[:space:]]ms ]]; then
         container_id="${BASH_REMATCH[1]}"
         time_ms="${BASH_REMATCH[2]}"
         calculated_times["p2p-containerlab-topology-$container_id"]=$time_ms
+    elif [[ "$line" =~ "The smallest bandwidth for connections is: "([0-9]+)" Kbps" ]]; then
+        # Extract and store the value of the smallest bandwidth
+        smallest_bandwidth="${BASH_REMATCH[1]}"
     fi
 done < "$JAVA_OUTPUT_FILE_PATH"
 
+# Output the smallest bandwidth for verification
+echo "The smallest bandwidth for connections is: $smallest_bandwidth Kbps"
+
+# Delete the temporary file
 rm "$JAVA_OUTPUT_FILE_PATH"
 
 printf "\n--Calculated transfer times for Container--\n\n"
@@ -582,6 +593,7 @@ echo "Number of Peers: $(($number_of_peers + 1))"
 echo "With Super-Peers: $has_superpeer"
 echo "All containers have the same PDF file: $all_containers_have_file"
 echo "Total Received Bytes: $total_received_bytes Bytes"
+echo "Total Received Bytes: $smallest_bandwidth Kbps"
 
 echo "Minimum Connection Time: $min_connection_time_sec s"
 echo "Avarage Connection Time: $avg_connection_time_sec s"
@@ -618,11 +630,11 @@ CSV_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/results/results-
 
 # Create a CSV file with headers if it doesn't already exist
 if [ ! -f "$CSV_PATH" ]; then
-    echo "TestID;Number of Peers;With Super-Peers;Total Duration [s];Total Received Bytes;Minimum Transfer Time Error Rate [%];Average Transfer Time Error Rate [%];Maximum Transfer Time Error Rate [%];Same PDF File;Maximum Connection Time [s];Minimum Connection Time [s];Average Connection Time [s];Maximum Transfer Time [s];Minimum Transfer Time [s];Average Transfer Time [s];Maximum Total Time [s];Minimum Total Time [s];Average Total Time [s];Maximum Latency Error Rate [%];Minimum Latency Error Rate [%];Average Latency Error Rate [%];Maximum Bandwidth Error Rate [%];Minimum Bandwidth Error Rate [%];Average Bandwidth Error Rate [%]" > "$CSV_PATH"
+    echo "TestID;Number of Peers;With Super-Peers;Total Duration [s];Total Received Bytes;Minimum Transfer Time Error Rate [%];Average Transfer Time Error Rate [%];Maximum Transfer Time Error Rate [%];Same PDF File;Maximum Connection Time [s];Minimum Connection Time [s];Average Connection Time [s];Maximum Transfer Time [s];Minimum Transfer Time [s];Average Transfer Time [s];Maximum Total Time [s];Minimum Total Time [s];Average Total Time [s];Maximum Latency Error Rate [%];Minimum Latency Error Rate [%];Average Latency Error Rate [%];Maximum Bandwidth Error Rate [%];Minimum Bandwidth Error Rate [%];Average Bandwidth Error Rate [%];Smallest Bandwidth [Kbps]" > "$CSV_PATH"
 fi
 
-# Append the current test results to the CSV file along with the new fields for error rates and total duration
-echo "Test$test_id;$number_of_peers;$has_superpeer;$total_duration_sec;$total_received_bytes;$min_error_rate;$avg_error_rate;$max_error_rate;$all_containers_have_file;$max_connection_time_sec;$min_connection_time_sec;$avg_connection_time_sec;$max_transfer_time_sec;$min_transfer_time_sec;$avg_transfer_time_sec;$max_total_time_sec;$min_total_time_sec;$avg_total_time_sec;$max_latency_error_rate;$min_latency_error_rate;$avg_latency_error_rate;$max_bandwidth_error_rate;$min_bandwidth_error_rate;$avg_bandwidth_error_rate" >> "$CSV_PATH"
+# Append the current test results to the CSV file along with the new fields for error rates, total duration, and smallest bandwidth
+echo "Test$test_id;$number_of_peers;$has_superpeer;$total_duration_sec;$total_received_bytes;$min_error_rate;$avg_error_rate;$max_error_rate;$all_containers_have_file;$max_connection_time_sec;$min_connection_time_sec;$avg_connection_time_sec;$max_transfer_time_sec;$min_transfer_time_sec;$avg_transfer_time_sec;$max_total_time_sec;$min_total_time_sec;$avg_total_time_sec;$max_latency_error_rate;$min_latency_error_rate;$avg_latency_error_rate;$max_bandwidth_error_rate;$min_bandwidth_error_rate;$avg_bandwidth_error_rate;$smallest_bandwidth" >> "$CSV_PATH"
 
 printf "\nStep Done: Writing all results into CSV file is done.\n\n"
 

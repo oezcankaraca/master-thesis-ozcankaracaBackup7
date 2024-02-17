@@ -187,11 +187,18 @@ public class ConnectionDetails {
 
         System.out.println("\n--The size of file--\n");
         System.out.println(sizeOfPDF);
+        int minBandwidth = Integer.MAX_VALUE;
 
         System.out.println("\n--The allocation of bandwidth for connections--\n");
         for (Map.Entry<String, Integer> entry : bandwidthAllocation.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue() + " Kbps");
+            if (entry.getValue() < minBandwidth) {
+                minBandwidth = entry.getValue(); // Store the new smallest value
+            }
         }
+
+        // Print the smallest bandwidth
+        System.out.println("\nThe smallest bandwidth for connections is: " + minBandwidth + " Kbps");
 
         printDataTransferTimes(bandwidthAllocation, sizeOfPDF);
 
