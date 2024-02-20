@@ -1,5 +1,4 @@
 #!/bin/bash
-# This is a shebang line that tells the system this script should be run with bash
 
 printf "\nStarting Testbed.\n\n"
 

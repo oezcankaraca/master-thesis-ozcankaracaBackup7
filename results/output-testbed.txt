@@ -1,3 +1,25 @@
+---------------------------------------------------------------------------------------------------------------------------------------------
+						The Output Details of the Testbed:
+
+1-Starting Testbed: Initialization of the testbed environment.
+2-Test Configuration: Information about the test setup including P2P algorithm usage, number of peers, and file size for transfer.
+3-Test Case Preparation: Steps for choosing the test case and moving the data file for testing.
+4-Connection Analysis: Details of analyzing connection data including peer and network configurations.
+5-P2P Algorithm Integration: Integrating and processing the P2P algorithm in the network setup.
+6-Combining Connection Details: Compilation of network connection details for analysis.
+7-Network Configuration and Data Transfer Analysis: Analysis of network configurations and data transfer times for connections.
+8-YML File Generation for Testbed: Creation of a YAML file for the testbed setup.
+9-Docker Image Generation: Process of creating Docker images for the testbed.
+10-Containerlab File Creation: Generation of a Containerlab file for the network setup.
+11-Network Characteristics Validation: Validation of network characteristics: latency and bandwidth.
+12-Container Logs Checking: Retrieval and analysis of logs from each container involved in the test.
+13-File Integrity Check: Verification of file integrity across containers using hash comparisons.
+14-Testbed Cleanup: Cleaning up the testbed environment by destroying Containerlab and removing Docker images.
+15-Results Calculation: Compilation and calculation of all test results.
+16-CSV File Generation: Writing all test results into a CSV file for record-keeping.
+17-Stopping Testbed: Final step marking the completion of the testbed operation.
+---------------------------------------------------------------------------------------------------------------------------------------------
+
 Starting Testbed.
 
 Info: Running test with p2p_algorithm_used=true, number_of_peers=5, choice_of_pdf_mb=2
