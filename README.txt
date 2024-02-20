@@ -1,6 +1,6 @@
-The implementation in this master thesis consists of three Java programs, a few scripts, and a few dockerfiles. Then, there is a file where all the data used in the testbed is stored. 
+The implementation in this master thesis consists of three Java programs, a few scripts, and a few dockerfiles. Then, there is a file (data-for-testbed) where all the data used in the testbed is stored. 
 
-These three Java programs, and their tasks are briefly as follows:
+Each Java program folder contains an explanation file in which the classes in that Java program are examined in detail. These three Java programs, and their tasks are briefly as follows:
 
 Path: /master-thesis-ozcankaraca/
 java-program-for-testbed: This java program implements the files and data required to set up the testbed. 
@@ -22,6 +22,7 @@ To run the Testbed:
 
 A total of two scripts were used to configure and then run the testbed. These are as follows:
 
+Path: /master-thesis-ozcankaraca/
 configuration-testbed: This is where all the Java programs, images, and scripts described above are configured. This script configures and runs the entire testbed according to three values from the run-testbed script.
 
 run-testbed: This is the home directory of the testbed and the script file where three main values as arrays are entered. These three main values are as follows:

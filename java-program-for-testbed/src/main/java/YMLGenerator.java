@@ -37,7 +37,7 @@ public class YMLGenerator {
     private static Map<String, String> peerEnvVariablesSuperPeerIP = new HashMap<>();
     private static int subnetCounter = 21;
 
-    private static int numberOfPeers = 75;
+    private static int numberOfPeers = 50;
     private static boolean useSuperPeers = false;
     private static String pathToConnectionDetails;
 
