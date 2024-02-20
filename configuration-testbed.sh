@@ -32,11 +32,12 @@ JAVA_PROGRAM_FOR_VALIDATION_PATH="$BASE_PATH/master-thesis-ozcankaraca/java-prog
 JAVA_PROGRAM_FOR_CONTAINER_PATH="$BASE_PATH/master-thesis-ozcankaraca/java-program-for-container/"
 
 # Path to the YAML file for containerlab topology configuration
-CONTAINERLAB_YML="$BASE_PATH/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml"
+CONTAINERLAB_YML_PATH="$BASE_PATH/master-thesis-ozcankaraca/java-program-for-container/src/main/java/containerlab-topology.yml"
+DOCKER_COMPOSE_PATH="$BASE_PATH/master-thesis-ozcankaraca/java-program-for-container/src/main/java/"
 
 # Paths for Docker images related to the testbed, tracker-peer, and monitoring tools
 IMAGE_TESTBED_PATH="$BASE_PATH/master-thesis-ozcankaraca/java-program-for-container/"
-IMAGE_TRACKER_PATH="$BASE_PATH/master-thesis-ozcankaraca/java-program-for-validation/src/main/java"
+IMAGE_TRACKER_PATH="$BASE_PATH/master-thesis-ozcankaraca/java-program-for-validation/"
 IMAGE_ANALYSING_MONITORING_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/data-for-analysing-monitoring/"
 
 # Path to the PDF files for data transfer
@@ -130,17 +131,17 @@ printf "\nStep Done: Combining connection details is done.\n"
     printf "Step Started: Generating Docker image.\n"
 
     # Building Docker images for the testbed, tracker-peer, and monitoring tools
-    cd "$IMAGE_TESTBED_PATH"
+    #cd "$IMAGE_TESTBED_PATH"
     printf "\nInfo: Creating Docker image for testbed.\n"
     #docker build -f dockerfile.testbed -t image-testbed .
-    #sleep 5
+    sleep 5
     
-    cd "$IMAGE_TRACKER_PATH"
+    #cd "$IMAGE_TRACKER_PATH"
     printf "\nInfo: Creating Docker image for tracker-peer.\n"
     #docker build -f dockerfile.tracker -t image-tracker .
     #sleep 5
     
-    cd "$IMAGE_ANALYSING_MONITORING_PATH"
+    #cd "$IMAGE_ANALYSING_MONITORING_PATH"
     printf "\nInfo: Creating Docker image for analysing and monitoring.\n"
     #docker build -f dockerfile.cadvisor -t image-cadvisor .
     #sleep 5
@@ -151,7 +152,7 @@ printf "\nStep Done: Combining connection details is done.\n"
     # Starting the deployment of Containerlab
     printf "\nStep Started: Creating Containerlab file.\n"
     printf "\nInfo: Starting Containerlab.\n\n"
-    sudo containerlab deploy -t "$CONTAINERLAB_YML"
+    sudo containerlab deploy -t "$CONTAINERLAB_YML_PATH"
     sleep 5 
     printf "\nStep Done: Creating Containerlab file is done.\n"
 }
@@ -191,7 +192,7 @@ run_validation() {
 
 # Executing the testbed setup and validation process
 testbed_and_containerlab
-#run_validation
+run_validation
 
 # Check if the previous command was successful
 if [ $? -eq 0 ]; then
@@ -201,11 +202,11 @@ else
     printf "Unsuccess: Some tests need to be repeated. Restarting the testbed and containerlab."
 
     printf "Info: Destroying Containerlab and cleaning up the environment."
-    #sudo containerlab destroy -t "$CONTAINERLAB_YML" --cleanup
+    sudo containerlab destroy -t "$CONTAINERLAB_YML_PATH" --cleanup
    
     # Executing the testbed setup and validation process again
-    #testbed_and_containerlab
-    #run_validation
+    testbed_and_containerlab
+    run_validation
 fi
 
 printf "\nInfo: Validation is done.\n"
@@ -472,9 +473,14 @@ fi
 
 printf "\n----------------------------------------------------------------------------------------------------------------------------------------\n"
 
-printf "\nInfo: Container check completed. Cleaning up the environment.\n"
-printf "\nStep Done: Checking Container logs is done.\n"
+# Navigating to the directory containing the docker-compose
+cd "$DOCKER_COMPOSE_PATH"
+printf "\nInfo: Creating Grafana container. Important: If the containers must be monitored, they should not be destroyed with Containerlab\n"
+#docker compose up --detach
+#sleep 50
 
+printf "\nInfo: Container check completed. Cleaning up the environment.\n"
+printf "\nStep Done: Checking container logs and monitoring is done.\n"
 sleep 20 
 
 cd "$JAVA_PROGRAM_FOR_VALIDATION_PATH"
@@ -492,7 +498,7 @@ printf "Step Started: Cleaning up the testbed.\n"
 
 # Destroying the Containerlab setup and cleaning up the environment
 printf "\nInfo: Destroying Containerlab and cleaning up the environment.\n\n"
-sudo containerlab destroy -t "$CONTAINERLAB_YML" --cleanup
+sudo containerlab destroy -t "$CONTAINERLAB_YML_PATH" --cleanup
 
 # Waiting for a short period to ensure all containers are stopped
 printf "\nInfo: Waiting for all Containers to stop.\n"
@@ -504,11 +510,15 @@ if [ "$enable_cleanup_for_image" == "true" ]; then
         printf "Info: All Containers have stopped.\n\n"
         printf "Deleting Docker image:\n"
 
-        #docker image rm image-testbed
-        #docker image rm image-tracker
-        #docker image rm image-cadvisor
-        #docker image rm image-prometheus
+        docker image rm image-testbed
+        docker image rm image-tracker
+        docker image rm image-cadvisor
+        docker image rm image-prometheus
         printf "\nInfo: Docker image successfully deleted."
+        
+        cd "$DOCKER_COMPOSE_PATH"
+        printf "Deleting Grafana:\n"
+        docker compose down
     else
         echo "Error: There are still running Containers. Cannot delete Docker image."
     fi
@@ -591,9 +601,6 @@ if [ "$p2p_algorithm_used" = "true" ]; then
 else
     algorithm_status="NOT USED"
 fi
-
-# Print out the status
-echo "P2P Algorithm Status: $algorithm_status"
 
 # Displaying all calculated results
 printf "\nAll Results:\n"
