@@ -57,7 +57,7 @@ public class TrackerPeer {
                         // Check if all confirmations are received
                         if (received == expectedNumberOfConfirmations) {
                             long duration = System.currentTimeMillis() - startTime;
-                            System.out.println("Info: All confirmations received\n");
+                            System.out.println("Info: All confirmations received.\n");
                             System.out.println("Data Transfer End Time: " + LocalDateTime.now().toString());
                             System.out.println("Result: Total duration: " + duration + " ms");
                             break;

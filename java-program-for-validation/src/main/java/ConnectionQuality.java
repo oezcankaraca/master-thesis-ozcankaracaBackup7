@@ -67,17 +67,22 @@ public class ConnectionQuality extends YMLParserForConnectionQuality {
 
         System.out.println("\nStep Started: Validation of the network characteristics.\n");
 
-        // Parsing command-line arguments for number of peers.
+        // Check if a command-line argument is provided for the number of peers and use of super-peers.
         if (args.length > 0) {
-            try {
-                numberOfPeers = Integer.parseInt(args[0]);
-            } catch (NumberFormatException e) {
-                System.err.println("Error: Argument must be an integer. Defaulting to 10.");
+            for (int i = 0; i < args.length; i++) {
+                switch (i) {
+                    case 0:
+                        numberOfPeers = Integer.parseInt(args[i]);
+                        break;
+                    case 1:
+                        useSuperPeers = Boolean.parseBoolean(args[i]);
+                        break;
+                    default:
+                        // Optionally: Handle unexpected arguments
+                        System.out.println("Unexpected argument at position " + i + ": " + args[i]);
+                        break;
+                }
             }
-        }
-
-        if (args.length > 1) {
-            useSuperPeers = Boolean.parseBoolean(args[1]);
         }
 
         // Setting up connection information file path.
@@ -265,15 +270,17 @@ public class ConnectionQuality extends YMLParserForConnectionQuality {
             double measuredBandwidth = extractAndPrintIperfBandwidth(iperfResult);
             double measuredLatency = extractAndPrintPingLatency(pingResult);
 
-        // Load applied (expected) values from a configuration file.
-        String pathToConnectionDetails;
-        if (useSuperPeers) {
-            pathToConnectionDetails        = basePath + "/data-for-testbed/connection-details/with-superpeer/connection-details-"
-                + numberOfPeers + ".json";
-        } else {
-            pathToConnectionDetails = basePath + "/data-for-testbed/connection-details/without-superpeer/connection-details-"
-                    + numberOfPeers + ".json";
-        }
+            // Load applied (expected) values from a configuration file.
+            String pathToConnectionDetails;
+            if (useSuperPeers) {
+                pathToConnectionDetails = basePath
+                        + "/data-for-testbed/connection-details/with-superpeer/connection-details-"
+                        + numberOfPeers + ".json";
+            } else {
+                pathToConnectionDetails = basePath
+                        + "/data-for-testbed/connection-details/without-superpeer/connection-details-"
+                        + numberOfPeers + ".json";
+            }
 
             Object[] appliedValues = extractData(sourcePeerNumber, targetPeerNumber, pathToConnectionDetails);
 
@@ -310,7 +317,8 @@ public class ConnectionQuality extends YMLParserForConnectionQuality {
                     + (attempts + 1) + " attempts.");
             return true;
         } else {
-            System.out.println("\nUnsuccess: Test from " + sourcePeer + " to " + targetPeer + " failed after 3 attempts.");
+            System.out.println(
+                    "\nUnsuccess: Test from " + sourcePeer + " to " + targetPeer + " failed after 3 attempts.");
             return false;
         }
     }
@@ -447,7 +455,7 @@ public class ConnectionQuality extends YMLParserForConnectionQuality {
                 for (int i = 0; i < parts.length; i++) {
                     if ("Gbits/sec".equals(parts[i]) || "Mbits/sec".equals(parts[i]) || "Kbits/sec".equals(parts[i])) {
                         bandwidthAsDouble = Double.parseDouble(parts[i - 1]);
-                        
+
                         // Convert bandwidth to Kbits/sec
                         if ("Gbits/sec".equals(parts[i])) {
                             bandwidthAsDouble *= 1000000;
@@ -483,7 +491,7 @@ public class ConnectionQuality extends YMLParserForConnectionQuality {
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject obj = jsonArray.getJSONObject(i); // Retrieves the JSONObject at position i
-                
+
                 // Checks if sourceName and targetName match the provided parameters
                 if (obj.getString("sourceName").equals(sourceName) && obj.getString("targetName").equals(targetName)) {
                     // Stores bandwidth, latency, and loss values in the result array
@@ -494,7 +502,7 @@ public class ConnectionQuality extends YMLParserForConnectionQuality {
                     return appliedValues;
                 }
             }
-            
+
             // Message if no data was found for the specified sourceName and targetName
             System.out.println("Error: No data found for the specified sourceName and targetName.");
         } catch (Exception e) {
@@ -591,11 +599,11 @@ public class ConnectionQuality extends YMLParserForConnectionQuality {
     private void analyzeAndPrintResults(double measuredBandwidth, int appliedBandwidth, double measuredLatency,
             double appliedLatency, double appliedLoss, String sourcePeer, String targetPeer)
             throws InterruptedException {
-        
+
         // Calculate error percentages for bandwidth and latency against applied (expected) values.
         double bandwidthError = calculateErrorPercentage(measuredBandwidth, appliedBandwidth);
         double latencyError = calculateErrorPercentage(measuredLatency, appliedLatency);
-        
+
         // Determine the acceptable latency error rate based on measured bandwidth.
         double acceptableLatencyErrorRate;
 

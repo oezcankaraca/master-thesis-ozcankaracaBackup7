@@ -14,24 +14,17 @@ import org.apache.log4j.Level;
 /**
  * The Peer class represents a node in a distributed network system, capable of
  * both client and server functionalities. Designed to work in environments with
- * varying network conditions, this class plays a pivotal role in testing and
- * evaluating
+ * varying network conditions, this class plays a pivotal role in testing and evaluating
  * network performance, especially in containerized settings.
  *
- * The class leverages the Netty library for efficient network communication,
- * handling file transfers,
+ * The class leverages the Netty library for efficient network communication, handling file transfers,
  * and maintaining connection states.
- * It manages critical metrics such as file transfer duration and connection
- * duration,
+ * It manages critical metrics such as file transfer duration and connection duration,
  * providing insights into network efficiency and reliability.
  *
- * Key functionalities include initiating connections to other peers, receiving
- * and
- * sending files, and dynamically adapting to the role of server or client based
- * on
- * environmental settings. This adaptability makes it suitable for complex
- * network
- * setups requiring robust testing and performance analysis.
+ * Key functionalities include initiating connections to other peers, receiving and
+ * sending files, and dynamically adapting to the role of server or client based on environmental settings. 
+ * This adaptability makes it suitable for complex network setups requiring robust testing and performance analysis.
  * 
  * @author Özcan Karaca
  */
@@ -49,12 +42,11 @@ public class Peer {
     private final int port;
 
     /**
-     * Constructs a Peer instance with a specified port and super peer identifier.
-     * It logs the construction of peer instances, particularly for specific ports
-     * and super peer conditions.
+     * Constructs a peer instance with a specified port and super peer identifier.
+     * It logs the construction of peer instances, particularly for specific ports and super-peer conditions.
      * 
      * @param port      The port number associated with this peer.
-     * @param superPeer The identifier of the super peer.
+     * @param superPeer The identifier of the super-peer.
      */
     public Peer(int port, String superPeer) {
         this.port = port;
@@ -66,27 +58,21 @@ public class Peer {
     }
 
     /**
-     * Sets the duration of a file transfer for this peer. This method is used to
-     * track the time taken for file transfers, which is a critical metric in
-     * evaluating network performance.
+     * Sets the duration of a file transfer for this peer. This method is used to track the time taken 
+     * for file transfers, which is a critical metric in evaluating network performance.
      * 
-     * @param fileTransferDuration The duration of the file transfer in
-     *                             milliseconds.
+     * @param fileTransferDuration The duration of the file transfer in milliseconds.
      */
     public void setFileTransferDuration(long fileTransferDuration) {
         this.fileTransferDuration = fileTransferDuration;
     }
 
     /**
-     * Starts the Lecture Studio Server and attempts to establish a connection to a
-     * super peer.
-     * This method handles the initialization of network components, connection
-     * attempts, and
-     * file transfer handling. It also calculates and logs the duration of the
-     * connection and file transfer.
+     * Starts the Lecture Studio Server and attempts to establish a connection to a super-peer.
+     * This method handles the initialization of network components, connection attempts, and file transfer 
+     * handling. It also calculates and logs the duration of the connection and file transfer.
      * 
-     * @throws Exception If an error occurs during the server startup or connection
-     *                   process.
+     * @throws Exception If an error occurs during the server startup or connection process.
      */
     public void startLectureStudioServer() throws Exception {
         EventLoopGroup workerGroup = new NioEventLoopGroup();
@@ -160,14 +146,12 @@ public class Peer {
     }
 
     /**
-     * Initiates the Super Peer setup and establishes a connection.
-     * This method configures networking components and attempts to connect to the
-     * specified super peer.
+     * Initiates the super-Peer setup and establishes a connection.
+     * This method configures networking components and attempts to connect to the specified super-peer.
      * It handles file reception and logs connection and file transfer durations.
      * 
-     * @param superPeerHost The hostname of the super peer.
-     * @throws Exception If an error occurs during the startup or connection
-     *                   process.
+     * @param superPeerHost The hostname of the super-peer.
+     * @throws Exception If an error occurs during the startup or connection process.
      */
     public void startSuperPeer(String superPeerHost) throws Exception {
         String superPeerIP = System.getenv("SUPER_PEER_IP_ADDRES");
@@ -275,16 +259,12 @@ public class Peer {
                 + " attempts.");
     }
     
-    
-
     /**
-     * The main method that initializes the Peer instance and starts the connection
-     * process.
-     * It determines the role of the peer (either Lecture Studio Server or a super
-     * peer) based on
+     * The main method that initializes the Peer instance and starts the connection process.
+     * It determines the role of the peer (either lectureStudioServer or a super-peer) based on
      * environment variables and initiates the corresponding network connection.
      * 
-     * @param args Command-line arguments (not used).
+     * @param args Command-line arguments.
      * @throws Exception If an error occurs during execution.
      */
     public static void main(String[] args) throws Exception {

@@ -48,9 +48,9 @@ public class SuperPeer {
     private volatile boolean fileReceived = false;
 
     /**
-     * Constructs a SuperPeer instance with specified server and client ports, as
+     * Constructs a super-peer instance with specified server and client ports, as
      * well as file paths for sending and receiving files.
-     * This constructor initializes the SuperPeer with necessary network parameters and logs its creation.
+     * This constructor initializes the super-peer with necessary network parameters and logs its creation.
      * 
      * @param serverPort        The port number on which the server will run.
      * @param clientPort        The port number on which the client will connect.
@@ -64,7 +64,7 @@ public class SuperPeer {
         this.filePathToReceive = filePathToReceive;
 
         System.out
-                .println("\nInfo: SuperPeer created with Server Port: " + serverPort + " and Client Port: "
+                .println("\nInfo: This super-peer created with server port: " + serverPort + " and client port: "
                         + clientPort);
     }
 
@@ -80,7 +80,7 @@ public class SuperPeer {
     }
 
     /**
-     * Starts the server component of the SuperPeer.
+     * Starts the server component of the super-peer.
      * This method waits for the file to be received before starting the server.
      * It sets up the network infrastructure to send files and waits for the completion of the file transfer.
      * 
@@ -139,7 +139,7 @@ public class SuperPeer {
     }
 
     /**
-     * Initiates the client component of the SuperPeer to establish a network connection and receive files.
+     * Initiates the client component of the super-peer to establish a network connection and receive files.
      * This method sets up the network client, attempts to connect to a specified
      * server, and handles file reception.
      * 
@@ -217,7 +217,7 @@ public class SuperPeer {
     }
 
     /**
-     * Sets the flag indicating whether a file has been received by this SuperPeer.
+     * Sets the flag indicating whether a file has been received by this super-peer.
      * 
      * @param received A boolean indicating if the file has been received.
      */
@@ -264,8 +264,8 @@ public class SuperPeer {
     
 
     /**
-     * The main method for the SuperPeer application.
-     * This method initializes the SuperPeer with network parameters, starts client and server threads,
+     * The main method for the super-peer application.
+     * This method initializes the super-peer with network parameters, starts client and server threads,
      * and handles file transfer operations between peers.
      * 
      * @param args Command-line arguments (not used).

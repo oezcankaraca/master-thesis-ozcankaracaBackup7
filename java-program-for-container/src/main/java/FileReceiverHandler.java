@@ -16,11 +16,8 @@ import java.io.IOException;
  * it initializes the file output stream to start receiving the data.
  * As the data arrives, it writes the bytes to the file and keeps track of the total number of bytes received.
  * Upon completion of the file transfer, it calculates the transfer duration,
- * logs the details, and notifies the associated Peer or SuperPeer instance.
- *
- * Additionally, it features a method to send a confirmation message to a tracker-peer after
- * successful file reception, enhancing its utility in network management and coordination scenarios.
- *
+ * logs the details, and notifies the associated peer or super-peer instance.
+ * 
  * @author Özcan Karaca
  */
 
@@ -34,7 +31,7 @@ public class FileReceiverHandler extends SimpleChannelInboundHandler<ByteBuf> {
     private final SuperPeer superPeer;
 
     /**
-     * Constructor for creating a FileReceiverHandler with a file path and a Peer instance.
+     * Constructor for creating a FileReceiverHandler with a file path and a peer instance.
      * 
      * @param fileToReceivePath The path where the received file will be saved.
      * @param peer     The Peer instance associated with this handler.
@@ -42,19 +39,19 @@ public class FileReceiverHandler extends SimpleChannelInboundHandler<ByteBuf> {
     public FileReceiverHandler(String fileToReceivePath, Peer peer) {
         this.fileToReceivePath = fileToReceivePath;
         this.peer = peer;
-        this.superPeer = null; // SuperPeer is not used in this context
+        this.superPeer = null; // The super-peer is not used in this context
     }
 
     /**
-     * Constructor for creating a FileReceiverHandler with a file path and a SuperPeer instance.
+     * Constructor for creating a FileReceiverHandler with a file path and a super-peer instance.
      * 
      * @param fileToReceivePath  The path where the received file will be saved.
-     * @param superPeer The SuperPeer instance associated with this handler.
+     * @param superPeer The super-peer instance associated with this handler.
      */
     public FileReceiverHandler(String fileToReceivePath, SuperPeer superPeer) {
         this.fileToReceivePath = fileToReceivePath;
         this.superPeer = superPeer;
-        this.peer = null; // Peer is not used in this context
+        this.peer = null; // The peer is not used in this context
     }
 
     /**
@@ -96,7 +93,7 @@ public class FileReceiverHandler extends SimpleChannelInboundHandler<ByteBuf> {
     /**
      * Handles the channel inactivity event, which indicates the end of file transfer.
      * It calculates the file transfer duration, logs the transfer details, and
-     * notifies the associated peer or super peer.
+     * notifies the associated peer or super-peer.
      * 
      * @param ctx The ChannelHandlerContext which provides access to the Channel,
      *            the EventLoop, and the ChannelPipeline.
@@ -124,7 +121,6 @@ public class FileReceiverHandler extends SimpleChannelInboundHandler<ByteBuf> {
                 superPeer.notify();
             }
         }
-
 
         fileOutputStream.close(); // Close the file output stream
         ctx.close(); // Close the network channel

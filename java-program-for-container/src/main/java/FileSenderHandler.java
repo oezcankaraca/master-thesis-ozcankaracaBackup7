@@ -7,15 +7,11 @@ import java.io.File;
  * a file from the local file system and sending it over a network channel. This class is integral in scenarios
  * where file distribution or data dissemination is required in a distributed network system.
  *
- * This handler can be associated with either a SuperPeer or a LectureStudioServer, allowing it to be versatile
+ * This handler can be associated with either a super-peer or a lectureStudioServer, allowing it to be versatile
  * in different network roles. Upon activation of the channel, the handler reads the specified file and streams it
  * over the network to the connected peer. It keeps track of the start time to calculate the duration of the file
  * transfer, providing important metrics for network performance analysis.
  *
- * Furthermore, it implements a mechanism to send a confirmation message to a tracker-peer,
- * signifying the successful completion of the file transfer. This capability is crucial for maintaining
- * synchronization and coordination in distributed network operations, ensuring reliable and efficient
- * data exchange.
  *
  * @author Özcan Karaca
  */
@@ -45,7 +41,7 @@ public class FileSenderHandler extends SimpleChannelInboundHandler<Object> {
      * LectureStudioServer instance.
      * 
      * @param fileToSendPath            The path of the file to be sent.
-     * @param lectureStudioServer The LectureStudioServer instance associated with this handler.
+     * @param lectureStudioServer The lectureStudioServer instance associated with this handler.
      */
     public FileSenderHandler(String fileToSendPath, LectureStudioServer lectureStudioServer) {
         this.fileToSendPath = fileToSendPath;
@@ -68,8 +64,7 @@ public class FileSenderHandler extends SimpleChannelInboundHandler<Object> {
 
         // Check if the file exists and is accessible
         if (file.exists()) {
-            // Stream the file content to the channel. The DefaultFileRegion is used for
-            // zero-copy transfer of the file content.
+            // Stream the file content to the channel.
             ctx.writeAndFlush(new DefaultFileRegion(file, 0, file.length())).addListener(new ChannelFutureListener() {
                 @Override
                 public void operationComplete(ChannelFuture future) {
@@ -81,7 +76,7 @@ public class FileSenderHandler extends SimpleChannelInboundHandler<Object> {
                         totalsentBytes = file.length();
                         System.out.println("Success: File sent successfully: " + fileToSendPath);
                         System.out.println("Info: Total sent bytes: " + totalsentBytes);
-                        // Updating the file transfer duration in the associated SuperPeer or LectureStudioServer
+                        // Updating the file transfer duration in the associated super-peer or lectureStudioServer
                         if (superPeer != null) {
                             synchronized (superPeer) {
                                 superPeer.setFileTransferDuration(transferDuration);
@@ -111,8 +106,8 @@ public class FileSenderHandler extends SimpleChannelInboundHandler<Object> {
      * However, it is not needed in the current context of FileSenderHandler as file
      * sending does not require handling incoming messages.
      *
-     * @param ctx The ChannelHandlerContext which provides access to the Channel,
-     *            the EventLoop, and the ChannelPipeline.
+     * @param ctx The ChannelHandlerContext which provides access to the Channel, 
+     * the EventLoop, and the ChannelPipeline.
      * @param msg The received message.
      */
     @Override

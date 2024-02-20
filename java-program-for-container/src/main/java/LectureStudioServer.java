@@ -19,32 +19,15 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 /**
  * 
- * The LectureStudioServer class is designed to act as a server in a distributed
- * system,
- * primarily for conducting network performance tests. This class is capable of
- * running server instances
- * on multiple IP addresses simultaneously, handling connections and file
- * transfers to multiple clients.
+ * The LectureStudioServer class is designed to act as a server primarily for conducting network performance 
+ * tests. This class is capable of running server instances on multiple IP addresses simultaneously, 
+ * handling connections and file transfers to multiple clients.
  * 
- * It uses the Netty framework for efficient network communication, setting up
- * server bootstrap and
- * channel handlers to manage incoming network traffic. The class is capable of
- * binding to different
- * IP addresses, specified during its initialization, and listens on a
- * designated port for incoming
- * connections. Key functionalities include starting server instances
- * onspecified IP addresses,
- * handling file sending operations, and logging critical network performance
- * metrics such as file send duration.
- * 
- * The server's operation is highly dependent on environment variables that
- * dictate the network topology
- * and parameters, making it adaptable for various testing scenarios. The
- * ability to extract IP addresses
- * from environment settings and to run multiple instances makes this class
- * suitable for complex network
- * environments where simultaneous connections from different network nodes are
- * required.
+ * It uses the Netty framework for efficient network communication, setting up server bootstrap and
+ * channel handlers to manage incoming network traffic. The class is capable of binding to different
+ * IP addresses, specified during its initialization, and listens on a designated port for incoming
+ * connections. Key functionalities include starting server instances on specified IP addresses,
+ * handling file sending operations, and logging network performance metrics such as file send duration.
  * 
  * @author Özcan Karaca
  */
@@ -65,15 +48,11 @@ public class LectureStudioServer {
 
     /**
      * 
-     * - Constructs a LectureStudioServer instance with a specified port and a list
-     * of
-     * - IP addresses.
-     * - This constructor initializes the server with necessary network parameters
-     * and
-     * - logs its creation.
-     * -
-     * - @param port The port number on which the server will listen.
-     * - @param ipAddresses A list of IP addresses on which the server will operate.
+     * Constructs a LectureStudioServer instance with a specified port and a list of IP addresses.
+     * This constructor initializes the server with necessary network parameters and logs its creation.
+     * 
+     * @param port The port number on which the server will listen.
+     * @param ipAddresses A list of IP addresses on which the server will operate.
      */
     public LectureStudioServer(int port, List<String> ipAddresses) {
         this.port = port;
@@ -83,11 +62,10 @@ public class LectureStudioServer {
 
     /**
      * 
-     * - Starts the server on all specified IP addresses.
-     * - This method launches a new thread for each IP address to start individual
-     * - server instances.
-     * -
-     * - @throws Exception If an error occurs during the server startup.
+     * Starts the server on all specified IP addresses.
+     * This method launches a new thread for each IP address to start individual server instances.
+     * 
+     * @throws Exception If an error occurs during the server startup.
      */
     public void start() throws Exception {
         for (String ipAddress : ipAddresses) {
@@ -103,15 +81,12 @@ public class LectureStudioServer {
 
     /**
      * 
-     * - Starts a server instance on a specified IP address.
-     * - This method sets up the server's network infrastructure and attempts to
-     * bind
-     * - it to the given IP address and port.
-     * - It also logs the binding process and total duration of the server
-     * operation.
-     * -
-     * - @param ipAddress The IP address to bind the server.
-     * - @throws Exception If an error occurs during the server setup or binding.
+     * Starts a server instance on a specified IP address.
+     * This method sets up the server's network infrastructure and attempts to bind it to the given 
+     * IP address and port. It also logs the binding process and total duration of the server operation.
+     * 
+     * @param ipAddress The IP address to bind the server.
+     * @throws Exception If an error occurs during the server setup or binding.
      */
     private void startServerOnAddress(String ipAddress) throws Exception {
         EventLoopGroup bossGroup = new NioEventLoopGroup();
@@ -185,12 +160,9 @@ public class LectureStudioServer {
 
     /**
      * 
-     * - Sends a confirmation message to tracker-peer after successful file
-     * transfer.
-     * - This method attempts to establish a socket connection to the server and
-     * sends
-     * - a predefined confirmation message.
-     * - It retries the connection a specified number of times in case of failures.
+     * Sends a confirmation message to tracker-peer after successful file transfer.
+     * This method attempts to establish a socket connection to the server and sends a predefined confirmation message.
+     * It retries the connection a specified number of times in case of failures.
      */
     private void sendConfirmationToTrackerPeer() {
         String trackerPeerHost = "172.100.100.11"; // Host address of the tracker peer
@@ -230,11 +202,10 @@ public class LectureStudioServer {
 
     /**
      * 
-     * - Sets the duration of a file transfer for this peer. This method is used to
-     * - track the time taken for file transfers, which is a critical metric in
-     * - evaluating network performance.
-     * -
-     * - @param duration The duration of the file transfer in milliseconds.
+     * Sets the duration of a file transfer for this peer. This method is used to track the time taken 
+     * for file transfers, which is a critical metric in evaluating network performance.
+     * 
+     * @param duration The duration of the file transfer in milliseconds.
      */
     public void setFileTransferDuration(long duration) {
         this.fileTransferDuration = duration;
@@ -242,11 +213,11 @@ public class LectureStudioServer {
 
     /**
      * 
-     * - Extracts the list of IP addresses from environment variables.
-     * - This method searches the environment variables for entries starting with
-     * - "CONNECTION_" and extracts the first IP address from each.
-     * -
-     * - @return A list of extracted IP addresses.
+     * Extracts the list of IP addresses from environment variables.
+     * This method searches the environment variables for entries starting with
+     * "CONNECTION_" and extracts the first IP address from each.
+     * 
+     * @return A list of extracted IP addresses.
      */
     private static List<String> extractIPAddressesFromEnv() {
         List<String> ipAddresses = new ArrayList<>();
@@ -266,10 +237,10 @@ public class LectureStudioServer {
 
     /**
      * 
-     * - Extracts the first IP address from a connection information string.
-     * -
-     * - @param connectionInfo The connection information string.
-     * - @return The extracted IP address or null if no IP address is found.
+     * Extracts the first IP address from a connection information string.
+     * 
+     * @param connectionInfo The connection information string.
+     * @return The extracted IP address or null if no IP address is found.
      */
     private static String extractFirstIPAddress(String connectionInfo) {
         String[] parts = connectionInfo.split(",");
@@ -282,12 +253,11 @@ public class LectureStudioServer {
 
     /**
      * 
-     * - The main method for the LectureStudioServer application.
-     * - This method initializes the server with network parameters based on
-     * - environment variables and starts the server.
-     * -
-     * - @param args Command-line arguments (not used).
-     * - @throws Exception If an error occurs during execution.
+     * The main method for the LectureStudioServer application.
+     * This method initializes the server with network parameters based on environment variables and starts the server.
+     * 
+     * @param args Command-line arguments.
+     * @throws Exception If an error occurs during execution.
      */
     public static void main(String[] args) throws Exception {
         System.out.println("\n*Main Method of lectureStudioServer*\n");

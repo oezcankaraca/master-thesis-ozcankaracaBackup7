@@ -7,7 +7,6 @@ import java.util.*;
  * network topologies and connection settings in a containerized environment.
  * It reads YAML configuration, extracts connection details between nodes,
  * and represents them in a structured format. 
- * This class is particularly useful for network analysis and diagnostics in containerized network setups.
  *
  * @author Özcan Karaca
  */
@@ -23,7 +22,7 @@ public class YMLParserForConnectionQuality {
         String CONNECTION_INFOS_FILE_DIR = basePath
                 + "/java-program-for-container/src/main/java/containerlab-topology.yml";
 
-        // Load YAML file containing topology configuration
+        // Load YAML file containing topology configuration.
         try (FileInputStream fis = new FileInputStream(CONNECTION_INFOS_FILE_DIR)) {
 
             Map<String, Object> data = yaml.load(fis);
@@ -32,7 +31,7 @@ public class YMLParserForConnectionQuality {
 
             List<ConnectionInfo> connections = new ArrayList<>();
 
-            // Iterate through each node to extract connection details
+            // Iterate through each node to extract connection details.
             for (Object nodeKey : nodes.keySet()) {
                 Map<String, Object> node = safeCastMap(nodes.get(nodeKey));
 
@@ -52,7 +51,7 @@ public class YMLParserForConnectionQuality {
                 }
             }
 
-            // Display the connection information
+            // Display the connection information.
             for (ConnectionInfo ci : connections) {
                 System.out.println(ci);
             }
