@@ -136,18 +136,18 @@ public class ConnectionDetails {
         String pathToJsonOutput;
         String pathToPeerInfo;
         if (useSuperPeers) {
-            pathToJsonOutput = basePath + "/data-for-testbed/outputs-with-superpeer/output-data-" + numberOfPeers
+            pathToJsonOutput = basePath + "/data-for-testbed/data-for-topology/outputs-with-superpeer/output-data-" + numberOfPeers
                     + ".json";
-                    pathToPeerInfo        = basePath + "/data-for-testbed/connection-details/with-superpeer/connection-details-"
+                    pathToPeerInfo        = basePath + "/data-for-testbed/data-for-connection/connection-details/with-superpeer/connection-details-"
                 + numberOfPeers + ".json";
         } else {
-            pathToJsonOutput = basePath + "/data-for-testbed/outputs-without-superpeer/output-data-" + numberOfPeers
+            pathToJsonOutput = basePath + "/data-for-testbed/data-for-topology/outputs-without-superpeer/output-data-" + numberOfPeers
                     + ".json";
-                    pathToPeerInfo = basePath + "/data-for-testbed/connection-details/without-superpeer/connection-details-"
+                    pathToPeerInfo = basePath + "/data-for-testbed/data-for-connection/connection-details/without-superpeer/connection-details-"
                     + numberOfPeers + ".json";
         }
          
-        String pathToJsonInput = basePath + "/data-for-testbed/inputs/input-data-" + numberOfPeers + ".json";
+        String pathToJsonInput = basePath + "/data-for-testbed/data-for-topology/inputs/input-data-" + numberOfPeers + ".json";
 
         System.out.println("Step Started: Combining connection details\n");
         System.out.println("Info: Starting connection details from output-data and input data");

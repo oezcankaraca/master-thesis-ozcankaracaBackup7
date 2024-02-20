@@ -68,7 +68,7 @@ public class CompareFiles {
         String basePath = homeDirectory + "/Desktop/master-thesis-ozcankaraca";
 
         // Local path of the source file, adjust as needed
-        String SOURCE_FILE_DIR = basePath + "/data-for-testbed/mydocument.pdf";
+        String SOURCE_FILE_DIR = basePath + "/data-for-testbed/data-for-tests/mydocument.pdf";
 
         // Flag to track if all file hashes match
         boolean allHashesMatch = true;

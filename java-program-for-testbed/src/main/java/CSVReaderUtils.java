@@ -174,7 +174,7 @@ public class CSVReaderUtils {
         // Specify the path to the CSV file
         String pathToCSV = basePath + "/data-for-testbed/data-for-realnetwork/fixed-broadband-speeds-august-2019-data-25.csv";
         // Define the path to store the network statistics
-        String pathToNetworkStatistics = basePath + "/data-for-testbed/results/network-statistics/network-statistics-50.txt";
+        String pathToNetworkStatistics = basePath + "/results/network-statistics/network-statistics-50.txt";
 
         readCsvDataAndWriteToFile(pathToCSV, pathToNetworkStatistics, numberOfPeers);
         System.out.println("Success: Network statistics have been written to the file: " + pathToNetworkStatistics + "\n");

@@ -76,14 +76,14 @@ public class YMLGenerator {
             String pathToOutputData;
             
             if (useSuperPeers) {
-                pathToOutputData = basePath + "/data-for-testbed/outputs-with-superpeer/output-data-" + numberOfPeers
+                pathToOutputData = basePath + "/data-for-testbed/data-for-topology/outputs-with-superpeer/output-data-" + numberOfPeers
                         + ".json";
-                pathToConnectionDetails = basePath + "/data-for-testbed/connection-details/with-superpeer/connection-details-" + numberOfPeers
+                pathToConnectionDetails = basePath + "/data-for-testbed/data-for-connection/connection-details/with-superpeer/connection-details-" + numberOfPeers
                         + ".json:/app/connection-details-" + numberOfPeers + ".json";
             } else {
-                pathToOutputData = basePath + "/data-for-testbed/outputs-without-superpeer/output-data-" + numberOfPeers
+                pathToOutputData = basePath + "/data-for-testbed/data-for-topology/outputs-without-superpeer/output-data-" + numberOfPeers
                         + ".json";
-                pathToConnectionDetails = basePath + "/data-for-testbed/connection-details/without-superpeer/connection-details-" + numberOfPeers
+                pathToConnectionDetails = basePath + "/data-for-testbed/data-for-connection/connection-details/without-superpeer/connection-details-" + numberOfPeers
                         + ".json:/app/connection-details-" + numberOfPeers + ".json";
             }
 
@@ -207,12 +207,12 @@ public class YMLGenerator {
             fw.write("        group: server\n");
             fw.write("      binds:\n");
             fw.write(
-                    "        - " + basePath + "/data-for-testbed/mydocument.pdf:/app/mydocument.pdf\n");
+                    "        - " + basePath + "/data-for-testbed/data-for-tests/mydocument.pdf:/app/mydocument.pdf\n");
             fw.write(
                     "        - " + pathToConnectionDetails + "\n");
             fw.write(
                     "        - " + basePath
-                            + "/data-for-testbed/script-for-connection/connection-details-superpeer.sh:/app/connection-details-superpeer.sh\n");
+                            + "/data-for-testbed/data-for-connection/script-for-connection/connection-details-superpeer.sh:/app/connection-details-superpeer.sh\n");
             fw.write("      exec:\n");
             fw.write("        - sleep 5\n");
             fw.write("        - chmod +x /app/connection-details-superpeer.sh\n");
@@ -357,7 +357,7 @@ public class YMLGenerator {
                     "        - " + pathToConnectionDetails + "\n");
             fw.write(
                     "        - " + basePath
-                            + "/data-for-testbed/script-for-connection/connection-details-superpeer.sh:/app/connection-details-superpeer.sh\n");
+                            + "/data-for-testbed/data-for-connection/script-for-connection/connection-details-superpeer.sh:/app/connection-details-superpeer.sh\n");
             fw.write("      exec:\n");
             fw.write("        - sleep 5\n");
             fw.write(
@@ -369,7 +369,7 @@ public class YMLGenerator {
             fw.write("      binds:\n");
             fw.write(
                     "        - " + basePath
-                            + "/data-for-testbed/script-for-connection/connection-details-peer.sh:/app/connection-details-peer.sh\n");
+                            + "/data-for-testbed/data-for-connection/script-for-connection/connection-details-peer.sh:/app/connection-details-peer.sh\n");
             fw.write("      exec:\n");
             fw.write("        - sleep 5\n");
             fw.write(
@@ -471,10 +471,10 @@ public class YMLGenerator {
 
         String pathToOutputFile;
         if (useSuperPeers) {
-            pathToOutputFile = basePath + "/data-for-testbed/outputs-with-superpeer/output-data-" + numberOfPeers
+            pathToOutputFile = basePath + "/data-for-testbed/data-for-topology/outputs-with-superpeer/output-data-" + numberOfPeers
                     + ".json";
         } else {
-            pathToOutputFile = basePath + "/data-for-testbed/outputs-without-superpeer/output-data-" + numberOfPeers
+            pathToOutputFile = basePath + "/data-for-testbed/data-for-topology/outputs-without-superpeer/output-data-" + numberOfPeers
                     + ".json";
         }
 

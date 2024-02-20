@@ -274,11 +274,11 @@ public class ConnectionQuality extends YMLParserForConnectionQuality {
             String pathToConnectionDetails;
             if (useSuperPeers) {
                 pathToConnectionDetails = basePath
-                        + "/data-for-testbed/connection-details/with-superpeer/connection-details-"
+                        + "/data-for-testbed/data-for-connection/connection-details/with-superpeer/connection-details-"
                         + numberOfPeers + ".json";
             } else {
                 pathToConnectionDetails = basePath
-                        + "/data-for-testbed/connection-details/without-superpeer/connection-details-"
+                        + "/data-for-testbed/data-for-connection/connection-details/without-superpeer/connection-details-"
                         + numberOfPeers + ".json";
             }
 

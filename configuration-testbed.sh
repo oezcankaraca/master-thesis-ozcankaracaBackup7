@@ -40,9 +40,9 @@ IMAGE_TRACKER_PATH="$BASE_PATH/master-thesis-ozcankaraca/java-program-for-valida
 IMAGE_ANALYSING_MONITORING_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/data-for-analysing-monitoring/"
 
 # Path to the PDF files for data transfer
-PDF_FILES_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/pdf-files/"
-DESTINATION_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/"
-DELETE_FILE_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/mydocument.pdf"
+PDF_FILES_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/data-for-tests/pdf-files/"
+DESTINATION_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/data-for-tests/"
+DELETE_FILE_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/data-for-tests/mydocument.pdf"
 
 # Iterate over each combination of variable values
 for has_superpeer in "${has_superpeer_values[@]}"; do
@@ -535,7 +535,7 @@ min_bandwidth_error_rate=${min_bandwidth_error_rate//,/\.}
 avg_bandwidth_error_rate=${avg_bandwidth_error_rate//,/\.}
 
 # Path for the file storing the test ID counter
-TEST_ID_FILE_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/results/test_id_counter.txt"
+TEST_ID_FILE_PATH="$BASE_PATH/master-thesis-ozcankaraca/results/test_id_counter.txt"
 
 # Incrementing the test ID for each run, or starting at 1 if the file doesn't exist
 if [ -f "$TEST_ID_FILE_PATH" ]; then
@@ -626,7 +626,7 @@ printf "\nStep Done: Calculating all results is done.\n"
 printf "\nStep Started: Writing all results into CSV file.\n"
 
 # Path for the CSV file to store the results
-CSV_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/results/results-testbed.csv"
+CSV_PATH="$BASE_PATH/master-thesis-ozcankaraca/results/results-testbed.csv"
 
 # Create a CSV file with headers if it doesn't already exist
 if [ ! -f "$CSV_PATH" ]; then

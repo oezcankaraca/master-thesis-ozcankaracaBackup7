@@ -237,7 +237,7 @@ public class DataGenerator {
         // Define the base path for the master thesis's directory
         String basePath = homeDirectory + "/Desktop/master-thesis-ozcankaraca";
         // Specify the path to the network statistics for number of peers
-        String pathToOutput = basePath + "/data-for-testbed/results/network-statistics/network-statistics-" + numberOfPeers + ".txt";
+        String pathToOutput = basePath + "/results/network-statistics/network-statistics-" + numberOfPeers + ".txt";
 
         // Initialize BufferedWriter for writing files
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(pathToOutput))) {

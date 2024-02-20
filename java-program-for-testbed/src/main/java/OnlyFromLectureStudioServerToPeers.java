@@ -38,7 +38,7 @@ public class OnlyFromLectureStudioServerToPeers {
         // Define the base path for the master thesis's directory
         String basePath = homeDirectory + "/Desktop/master-thesis-ozcankaraca";
         // Define the path for the output data with only lectureStudioServer
-        String pathToJsonOutput = basePath + "/data-for-testbed/outputs-without-superpeer/output-data-" + numberOfPeers + ".json";
+        String pathToJsonOutput = basePath + "/data-for-testbed/data-for-topology/outputs-without-superpeer/output-data-" + numberOfPeers + ".json";
 
         // Prepare JSON data representing connections
         JsonArray peer2peerArray = new JsonArray();

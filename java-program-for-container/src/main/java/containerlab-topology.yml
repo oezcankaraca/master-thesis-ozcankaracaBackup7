@@ -36,9 +36,9 @@ topology:
         role: sender
         group: server
       binds:
-        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/mydocument.pdf:/app/mydocument.pdf
-        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/connection-details/with-superpeer/connection-details-5.json:/app/connection-details-5.json
-        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/script-for-connection/connection-details-superpeer.sh:/app/connection-details-superpeer.sh
+        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/data-for-tests/mydocument.pdf:/app/mydocument.pdf
+        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/data-for-connection/connection-details/with-superpeer/connection-details-5.json:/app/connection-details-5.json
+        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/data-for-connection/script-for-connection/connection-details-superpeer.sh:/app/connection-details-superpeer.sh
       exec:
         - sleep 5
         - chmod +x /app/connection-details-superpeer.sh
@@ -61,7 +61,7 @@ topology:
         role: receiver
         group: peer
       binds:
-        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/script-for-connection/connection-details-peer.sh:/app/connection-details-peer.sh
+        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/data-for-connection/script-for-connection/connection-details-peer.sh:/app/connection-details-peer.sh
       exec:
         - sleep 5
         - /bin/sh -c 'while ! ping -c 1 172.100.100.12 > /dev/null; do echo "Waiting for lectureStudioServer"; sleep 1; done'
@@ -82,7 +82,7 @@ topology:
         role: receiver
         group: peer
       binds:
-        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/script-for-connection/connection-details-peer.sh:/app/connection-details-peer.sh
+        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/data-for-connection/script-for-connection/connection-details-peer.sh:/app/connection-details-peer.sh
       exec:
         - sleep 5
         - /bin/sh -c 'while ! ping -c 1 172.100.100.12 > /dev/null; do echo "Waiting for lectureStudioServer"; sleep 1; done'
@@ -103,7 +103,7 @@ topology:
         role: receiver
         group: peer
       binds:
-        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/script-for-connection/connection-details-peer.sh:/app/connection-details-peer.sh
+        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/data-for-connection/script-for-connection/connection-details-peer.sh:/app/connection-details-peer.sh
       exec:
         - sleep 5
         - /bin/sh -c 'while ! ping -c 1 172.100.100.12 > /dev/null; do echo "Waiting for lectureStudioServer"; sleep 1; done'
@@ -126,8 +126,8 @@ topology:
         role: receiver/sender
         group: superpeer
       binds:
-        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/connection-details/with-superpeer/connection-details-5.json:/app/connection-details-5.json
-        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/script-for-connection/connection-details-superpeer.sh:/app/connection-details-superpeer.sh
+        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/data-for-connection/connection-details/with-superpeer/connection-details-5.json:/app/connection-details-5.json
+        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/data-for-connection/script-for-connection/connection-details-superpeer.sh:/app/connection-details-superpeer.sh
       exec:
         - sleep 5
         - /bin/sh -c 'while ! ping -c 1 172.100.100.12 > /dev/null; do echo "Waiting for lectureStudioServer"; sleep 1; done'
@@ -148,7 +148,7 @@ topology:
         role: receiver
         group: peer
       binds:
-        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/script-for-connection/connection-details-peer.sh:/app/connection-details-peer.sh
+        - /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/data-for-connection/script-for-connection/connection-details-peer.sh:/app/connection-details-peer.sh
       exec:
         - sleep 5
         - /bin/sh -c 'while ! ping -c 1 172.100.100.12 > /dev/null; do echo "Waiting for lectureStudioServer"; sleep 1; done'

@@ -119,7 +119,7 @@ public class NetworkConfigParser {
      * @return A list of names of super-peers, or an empty list if none exist.
      */
     public List<String> getSuperpeerNames() {
-        System.out.println("Info: Extracting superpeer names.");
+        System.out.println("Info: Extracting super-peer names.");
 
         // Check if the superpeers list is null or empty
         if (config.getSuperpeers() == null || config.getSuperpeers().isEmpty()) {
@@ -225,10 +225,10 @@ public class NetworkConfigParser {
         // Constructs the path to the output data file based on the number of peers
         String pathToOutputData;
         if (useSuperPeers) {
-            pathToOutputData = basePath + "/data-for-testbed/outputs-with-superpeer/output-data-" + numberOfPeers
+            pathToOutputData = basePath + "/data-for-testbed/data-for-topology/outputs-with-superpeer/output-data-" + numberOfPeers
                     + ".json";
         } else {
-            pathToOutputData = basePath + "/data-for-testbed/outputs-without-superpeer/output-data-" + numberOfPeers
+            pathToOutputData = basePath + "/data-for-testbed/data-for-topology/outputs-without-superpeer/output-data-" + numberOfPeers
                     + ".json";
         }
 
