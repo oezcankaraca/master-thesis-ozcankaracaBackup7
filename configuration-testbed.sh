@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Read values from run-testbed.sh
-IFS=' ' read -r -a has_superpeer_values <<< "$has_superpeer_values"
+IFS=' ' read -r -a p2p_algorithm_used_values <<< "$p2p_algorithm_used_values"
 IFS=' ' read -r -a number_of_peers_values <<< "$number_of_peers_values"
 IFS=' ' read -r -a choice_of_pdf_mb_values <<< "$choice_of_pdf_mb_values"
 IFS=' ' read -r -a BASE_PATH <<< "$BASE_PATH"
@@ -45,10 +45,10 @@ DESTINATION_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/data-for
 DELETE_FILE_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/data-for-tests/mydocument.pdf"
 
 # Iterate over each combination of variable values
-for has_superpeer in "${has_superpeer_values[@]}"; do
+for p2p_algorithm_used in "${p2p_algorithm_used_values[@]}"; do
     for number_of_peers in "${number_of_peers_values[@]}"; do
         for choice_of_pdf_mb in "${choice_of_pdf_mb_values[@]}"; do
-            echo "Info: Running test with has_superpeer=$has_superpeer, number_of_peers=$number_of_peers, choice_of_pdf_mb=$choice_of_pdf_mb"
+            echo "Info: Running test with p2p_algorithm_used=$p2p_algorithm_used, number_of_peers=$number_of_peers, choice_of_pdf_mb=$choice_of_pdf_mb"
 
 printf "\nStep Started: Choosing test case and moving data file.\n"
 
@@ -75,8 +75,8 @@ testbed_and_containerlab() {
     cd "$JAVA_PROGRAM_FOR_TESTBED_PATH"
     
     # Executing specific Java classes based on the configuration of super-peers 
-    if [ "$has_superpeer" = "false" ]; then
-        echo "Info: Executing OnlyFromLectureStudioServerToPeers class as has_superpeer is set to false."
+    if [ "$p2p_algorithm_used" = "false" ]; then
+        echo "Info: Executing OnlyFromLectureStudioServerToPeers class as p2p_algorithm_used is set to false."
         mvn -q exec:java -Dexec.mainClass="$java_program_for_testbed_class6" -Dexec.args="$number_of_peers"
     fi
     
@@ -88,12 +88,12 @@ testbed_and_containerlab() {
     mvn -q exec:java -Dexec.mainClass="$java_program_for_testbed_class2" -Dexec.args="$number_of_peers"
     sleep 5
     
-    mvn -q exec:java -Dexec.mainClass="$java_program_for_testbed_class3" -Dexec.args="$number_of_peers $has_superpeer"
+    mvn -q exec:java -Dexec.mainClass="$java_program_for_testbed_class3" -Dexec.args="$number_of_peers $p2p_algorithm_used"
     sleep 5
     
 # Execute the Java class and save the output to a temporary file
 JAVA_OUTPUT_FILE_PATH=$(mktemp)
-mvn -q exec:java -Dexec.mainClass="$java_program_for_testbed_class4" -Dexec.args="$number_of_peers $has_superpeer $choice_of_pdf_mb" | tee "$JAVA_OUTPUT_FILE_PATH"
+mvn -q exec:java -Dexec.mainClass="$java_program_for_testbed_class4" -Dexec.args="$number_of_peers $p2p_algorithm_used $choice_of_pdf_mb" | tee "$JAVA_OUTPUT_FILE_PATH"
 
 # Initialize a variable to store the smallest bandwidth
 smallest_bandwidth=0
@@ -124,7 +124,7 @@ done
 
 printf "\nStep Done: Combining connection details is done.\n"
      
-    mvn -q exec:java -Dexec.mainClass="$java_program_for_testbed_class5" -Dexec.args="$number_of_peers $has_superpeer"
+    mvn -q exec:java -Dexec.mainClass="$java_program_for_testbed_class5" -Dexec.args="$number_of_peers $p2p_algorithm_used"
     sleep 5
 
     printf "Step Started: Generating Docker image.\n"
@@ -186,7 +186,7 @@ run_validation() {
                 min_bandwidth_error_rate=$(echo "$line" | awk '{print $5}')
                 ;;
         esac
-    done < <(mvn -q exec:java -Dexec.mainClass="$java_program_for_validation_class1" -Dexec.args="$number_of_peers $has_superpeer")
+    done < <(mvn -q exec:java -Dexec.mainClass="$java_program_for_validation_class1" -Dexec.args="$number_of_peers $p2p_algorithm_used")
 }
 
 # Executing the testbed setup and validation process
@@ -585,12 +585,22 @@ min_total_time_sec=$(calculate_and_format_time "$min_time")
 avg_total_time_sec=$(calculate_and_format_time "$avg_total_time")
 total_duration_sec=$(calculate_and_format_time "$total_duration")
 
+# Check if p2p_algorithm_used is true
+if [ "$p2p_algorithm_used" = "true" ]; then
+    algorithm_status="USED"
+else
+    algorithm_status="NOT USED"
+fi
+
+# Print out the status
+echo "P2P Algorithm Status: $algorithm_status"
+
 # Displaying all calculated results
 printf "\nAll Results:\n"
 
 echo "TestID: Test$test_id"
-echo "Number of Peers: $(($number_of_peers + 1))"
-echo "With Super-Peers: $has_superpeer"
+echo "Number of Peers: $number_of_peers"
+echo "P2P Algorithm: $algorithm_status"
 echo "All containers have the same PDF file: $all_containers_have_file"
 echo "Total Received Bytes: $total_received_bytes Bytes"
 echo "Total Received Bytes: $smallest_bandwidth Kbps"
@@ -630,11 +640,11 @@ CSV_PATH="$BASE_PATH/master-thesis-ozcankaraca/results/results-testbed.csv"
 
 # Create a CSV file with headers if it doesn't already exist
 if [ ! -f "$CSV_PATH" ]; then
-    echo "TestID;Number of Peers;With Super-Peers;Total Duration [s];Total Received Bytes;Minimum Transfer Time Error Rate [%];Average Transfer Time Error Rate [%];Maximum Transfer Time Error Rate [%];Same PDF File;Maximum Connection Time [s];Minimum Connection Time [s];Average Connection Time [s];Maximum Transfer Time [s];Minimum Transfer Time [s];Average Transfer Time [s];Maximum Total Time [s];Minimum Total Time [s];Average Total Time [s];Maximum Latency Error Rate [%];Minimum Latency Error Rate [%];Average Latency Error Rate [%];Maximum Bandwidth Error Rate [%];Minimum Bandwidth Error Rate [%];Average Bandwidth Error Rate [%];Smallest Bandwidth [Kbps]" > "$CSV_PATH"
+    echo "TestID;Number of Peers;P2P Algorithm;Total Duration [s];Total Received Bytes;Minimum Transfer Time Error Rate [%];Average Transfer Time Error Rate [%];Maximum Transfer Time Error Rate [%];Same PDF File;Maximum Connection Time [s];Minimum Connection Time [s];Average Connection Time [s];Maximum Transfer Time [s];Minimum Transfer Time [s];Average Transfer Time [s];Maximum Total Time [s];Minimum Total Time [s];Average Total Time [s];Maximum Latency Error Rate [%];Minimum Latency Error Rate [%];Average Latency Error Rate [%];Maximum Bandwidth Error Rate [%];Minimum Bandwidth Error Rate [%];Average Bandwidth Error Rate [%];Smallest Bandwidth [Kbps]" > "$CSV_PATH"
 fi
 
 # Append the current test results to the CSV file along with the new fields for error rates, total duration, and smallest bandwidth
-echo "Test$test_id;$number_of_peers;$has_superpeer;$total_duration_sec;$total_received_bytes;$min_error_rate;$avg_error_rate;$max_error_rate;$all_containers_have_file;$max_connection_time_sec;$min_connection_time_sec;$avg_connection_time_sec;$max_transfer_time_sec;$min_transfer_time_sec;$avg_transfer_time_sec;$max_total_time_sec;$min_total_time_sec;$avg_total_time_sec;$max_latency_error_rate;$min_latency_error_rate;$avg_latency_error_rate;$max_bandwidth_error_rate;$min_bandwidth_error_rate;$avg_bandwidth_error_rate;$smallest_bandwidth" >> "$CSV_PATH"
+echo "Test$test_id;$number_of_peers;$algorithm_status;$total_duration_sec;$total_received_bytes;$min_error_rate;$avg_error_rate;$max_error_rate;$all_containers_have_file;$max_connection_time_sec;$min_connection_time_sec;$avg_connection_time_sec;$max_transfer_time_sec;$min_transfer_time_sec;$avg_transfer_time_sec;$max_total_time_sec;$min_total_time_sec;$avg_total_time_sec;$max_latency_error_rate;$min_latency_error_rate;$avg_latency_error_rate;$max_bandwidth_error_rate;$min_bandwidth_error_rate;$avg_bandwidth_error_rate;$smallest_bandwidth" >> "$CSV_PATH"
 
 printf "\nStep Done: Writing all results into CSV file is done.\n\n"
 
