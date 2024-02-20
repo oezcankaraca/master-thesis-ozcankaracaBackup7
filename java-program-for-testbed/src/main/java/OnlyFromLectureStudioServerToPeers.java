@@ -61,6 +61,7 @@ public class OnlyFromLectureStudioServerToPeers {
             System.out.println("\nSuccess: Peer information has been saved to the file: " + pathToJsonOutput);
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("\nUnsuccess: Peer information could not have been saved to the file: " + pathToJsonOutput);
         }
     }
 }

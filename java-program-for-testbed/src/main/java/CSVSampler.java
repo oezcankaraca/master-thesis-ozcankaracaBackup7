@@ -238,7 +238,7 @@ public class CSVSampler {
         // Specify the path for the output CSV file with reduced sample
         String pathToCSVReduced = basePath + "/data-for-testbed/data-for-realnetwork/reduced-sample.csv";
 
-        // Set the sample size and the percentage for each technology type for 2019
+        // Set the sample size and the percentage for each technology type from 2019
         int sampleSize = 360;
         double adslPercentage = 77.30;
         double cablePercentage = 19.70;

@@ -17,14 +17,8 @@ import java.util.Random;
  * This class generates a JSON representation of a network topology, including various
  * network parameters and connections between peers.
  * It includes functionalities to collect and analyze data for each peer 
- * (like upload/download speeds, latency, packet loss),
+ * (like upload/download speeds, latency, and packet loss),
  * establish connections between peers, and output the final network topology in a JSON format.
- * The class is designed to simulate a realistic network environment for testing purposes.
- *
- * Usage: This class is used in a process that involves collecting simulated network data for a specified
- * number of peers, including a special peer named lectureStudioServer.
- * It then generates a JSON file that describes the network topology,
- * including connections between these peers and their respective network parameters.
  * 
  * @author Özcan Karaca
  */
@@ -37,7 +31,7 @@ public class GeneratorOfNetworkTopology {
      * The main method to initiate the generation of network topology data.
      * It begins by collecting simulated network data for a specified number of peers, 
      * including lectureStudioServer.
-     * Then, it proceeds to create a network topology in JSON format, detailing  onnections between peers.
+     * Then, it proceeds to create a network topology in JSON format, detailing connections between peers.
      *
      * @param args Command line arguments, expects the number of peers as an optional argument.
      */
@@ -135,7 +129,7 @@ public class GeneratorOfNetworkTopology {
     /**
      * Generates a JSON object representing the input data for the network topology.
      * This method creates a JSON object with details of each peer, including the lectureStudioServer,
-     * and their respective network parameters like maximum upload and download  speeds.
+     * and their respective network parameters like maximum upload and download speeds.
      *
      * @param peerStatsList A list of PeerStats objects containing network data for each peer.
      * @return A JsonObject representing the network topology's input data.

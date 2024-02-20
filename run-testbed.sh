@@ -3,9 +3,9 @@
 printf "\nStarting Testbed.\n\n"
 
 # run-testbed-automation.sh
-export has_superpeer_values="true false"
+export has_superpeer_values="true"
 export number_of_peers_values="5"
-export choice_of_pdf_mb_values="2 4 8 16 32"
+export choice_of_pdf_mb_values="2 4 8 16 32 64"
 
 # Base directory path where all project-related files are located
 export BASE_PATH="$HOME/Desktop"

@@ -10,15 +10,15 @@ import java.util.Random;
 
 
 public class GeneratorOfNetworkTopologyRandom {
-    private static int numberOfPeers = 75; // Default-Anzahl der Peers inklusive lectureStudioServer
-    static JsonArray peersArray = new JsonArray(); // JSON-Array für Peer-Informationen
-    static JsonArray connectionsArray = new JsonArray(); // JSON-Array für Verbindungen zwischen Peers
-    private static Random random = new Random(); // Instanz von Random für die Generierung von Zufallswerten
+    private static int numberOfPeers = 75; 
+    static JsonArray peersArray = new JsonArray(); 
+    static JsonArray connectionsArray = new JsonArray(); 
+    private static Random random = new Random(); 
 
     public static void main(String[] args) {
         if (args.length > 0) {
             try {
-                numberOfPeers = Integer.parseInt(args[0]) + 1; // Anpassung für zusätzlichen Peer lectureStudioServer
+                numberOfPeers = Integer.parseInt(args[0]) + 1; 
             } catch (NumberFormatException e) {
                 System.err.println("Error: Argument must be an integer. Using default value of 11.");
             }
@@ -29,7 +29,7 @@ public class GeneratorOfNetworkTopologyRandom {
         String pathToInputData = basePath + "/data-for-testbed/inputs-new/input-data-" + numberOfPeers + ".json";
 
         addLectureStudioServerPeer();
-        for (int i = 1; i <= numberOfPeers; i++) { // Start bei 1, da lectureStudioServer schon hinzugefügt wurde
+        for (int i = 1; i <= numberOfPeers; i++) { 
             generatePeerData(i);
         }
         generateConnections();
@@ -58,8 +58,8 @@ public class GeneratorOfNetworkTopologyRandom {
 
     private static void generatePeerData(int peerId) {
         JsonObject peerObject = new JsonObject();
-        int downloadSpeed = 80000 + random.nextInt(10000); // 80-90 Mbit/s
-        int uploadSpeed = 25000 + random.nextInt(5000); // 25-30 Mbit/s
+        int downloadSpeed = 80000 + random.nextInt(10000); 
+        int uploadSpeed = 25000 + random.nextInt(5000);
 
         peerObject.addProperty("name", String.valueOf(peerId));
         peerObject.addProperty("maxUpload", uploadSpeed);
@@ -79,9 +79,9 @@ public class GeneratorOfNetworkTopologyRandom {
 
                     int sourceUpload = sourcePeer.get("maxUpload").getAsInt();
                     int targetDownload = targetPeer.get("maxDownload").getAsInt();
-                    double latency = 40 + random.nextDouble() * 40; // 40-80 ms
-                    double packetLoss = 0.001 + random.nextDouble() * 0.001; // 0.001-0.002
-                    int bandwidth = Math.min(sourceUpload, targetDownload); // Bandbreite als Minimum von Upload und Download
+                    double latency = 40 + random.nextDouble() * 40; 
+                    double packetLoss = 0.001 + random.nextDouble() * 0.001; 
+                    int bandwidth = Math.min(sourceUpload, targetDownload);
 
                     connection.addProperty("sourceName", sourcePeer.get("name").getAsString());
                     connection.addProperty("targetName", targetPeer.get("name").getAsString());

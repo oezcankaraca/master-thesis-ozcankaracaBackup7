@@ -11,18 +11,14 @@ import java.util.stream.Collectors;
 
 /**
  * The NetworkConfigParser class is designed for parsing and processing network configuration data.
- * This class reads a JSON file that defines the network topology, including P2P connections and superpeers.
+ * This class reads a JSON file that defines the network topology, including connections and super-peers.
  * It provides functionalities to extract and organize various aspects of the
  * network configuration such as:
- * - The names of superpeers.
- * - P2P connection details.
- * - Mapping superpeers to their connected peers.
- * - Generating a list of distinct peer names, excluding superpeers and the lectureStudioServer.
+ * - The names of super-peers.
+ * - Connection details between peers.
+ * - Mapping super-peers to their connected peers.
+ * - Generating a list of distinct peer names, excluding super-peers and the lectureStudioServer.
  *
- * Usage: This class is used to parse network configuration data from a JSON file, facilitating the
- * understanding and analysis of the network topology. It is particularly useful in scenarios where
- * network configurations need to be dynamically read and interpreted for simulation or analysis purposes.
- * 
  * @author Özcan Karaca
  */
 public class NetworkConfigParser {
@@ -79,19 +75,18 @@ public class NetworkConfigParser {
     }
 
     /**
-     * Encapsulates the entire network configuration, including peer-to-peer connections
-     * and superpeers. This class provides a top-level view of the network's structure.
+     * Encapsulates the entire network configuration, including P2P connections and super-peers
      */
     static class NetworkConfig {
-        private List<PeerConnection> peer2peer; // List of peer-to-peer connections
-        private List<Superpeer> superpeers; // List of superpeers in the network
+        private List<PeerConnection> peer2peer; // List of P2P connections
+        private List<Superpeer> superpeers; // List of super-peers in the network
 
-        // Returns the list of peer-to-peer connections.
+        // Returns the list of P2P connections.
         public List<PeerConnection> getPeer2peer() {
             return peer2peer;
         }
 
-        // Returns the list of superpeers.
+        // Returns the list of super-peers.
         public List<Superpeer> getSuperpeers() {
             return superpeers;
         }
@@ -111,29 +106,28 @@ public class NetworkConfigParser {
         System.out.println("Info: Initializing NetworkConfigParser with file: " + configFilePath);
         ObjectMapper mapper = new ObjectMapper();
 
-        // Reads the network configuration from the given file path into a NetworkConfig
-        // object
+        // Reads the network configuration from the given file path into a NetworkConfig object
         config = mapper.readValue(new File(configFilePath), new TypeReference<NetworkConfig>() {
         });
         System.out.println("Success: Network configuration successfully loaded.");
     }
 
     /**
-     * Retrieves the names of all superpeers defined in the network configuration.
-     * If there are no superpeers, it returns an empty list.
+     * Retrieves the names of all super-peers defined in the network configuration.
+     * If there are no super-peers, it returns an empty list.
      *
-     * @return A list of names of superpeers, or an empty list if none exist.
+     * @return A list of names of super-peers, or an empty list if none exist.
      */
     public List<String> getSuperpeerNames() {
         System.out.println("Info: Extracting superpeer names.");
 
         // Check if the superpeers list is null or empty
         if (config.getSuperpeers() == null || config.getSuperpeers().isEmpty()) {
-            System.out.println("Info: No superpeers found in the configuration.");
+            System.out.println("Info: No super-peers found in the configuration.");
             return new ArrayList<>(); // Return an empty list
         }
 
-        // Extracts and returns a list of names of superpeers from the network configuration
+        // Extracts and returns a list of names of super-peers from the network configuration
         return config.getSuperpeers().stream()
                 .map(Superpeer::getName)
                 .collect(Collectors.toList());
@@ -143,34 +137,34 @@ public class NetworkConfigParser {
      * Retrieves all P2P connections defined in the network configuration.
      * This method returns a list of PeerConnection objects, each representing a connection between two peers.
      *
-     * @return A list of PeerConnection objects representing peer-to-peer
+     * @return A list of PeerConnection objects representing P2P
      *         connections.
      */
     public List<PeerConnection> getPeerConnections() {
-        System.out.println("Info: Retrieving peer-to-peer connections.");
+        System.out.println("Info: Retrieving P2P connections.");
 
         // Returns a list of PeerConnection representing all P2P connections in the network configuration.
         return config.getPeer2peer();
     }
 
     /**
-     * Generates a mapping of superpeers to their directly connected peers.
-     * If there are no superpeers, it returns an empty map.
+     * Generates a mapping of super-peers to their directly connected peers.
+     * If there are no super-peers, it returns an empty map.
      *
      * @return A map where each key is a superpeer name and the value is a list of
-     *         connected peers, or an empty map if there are no superpeers.
+     *         connected peers, or an empty map if there are no super-peers.
      */
     public Map<String, List<String>> getSuperpeerConnections() {
-        System.out.println("Info: Mapping superpeers to their connected peers.");
+        System.out.println("Info: Mapping super-peers to their connected peers.");
         Map<String, List<String>> superpeerConnections = new HashMap<>();
 
-        // Check if the superpeers list is null or empty
+        // Check if the super-peers list is null or empty
         if (config.getSuperpeers() == null || config.getSuperpeers().isEmpty()) {
-            System.out.println("Info: No superpeers found in the configuration for mapping connections.");
+            System.out.println("Info: No super-peers found in the configuration for mapping connections.");
             return superpeerConnections; // Return an empty map
         }
 
-        // Maps each superpeer to a list of peers it is directly connected to
+        // Maps each super-peer to a list of peers it is directly connected to
         for (Superpeer superpeer : config.getSuperpeers()) {
             List<String> connectedPeers = config.getPeer2peer().stream()
                     .filter(connection -> superpeer.getName().equals(connection.getSourceName()))
@@ -182,18 +176,18 @@ public class NetworkConfigParser {
     }
 
     /**
-     * Gathers a list of distinct peer names, excluding superpeers and the lectureStudioServer.
+     * Gathers a list of distinct peer names, excluding super-peers and the lectureStudioServer.
      * This method processes the configuration data to compile a list of unique peer
-     * names that are not superpeers.
+     * names that are not super-peers.
      *
-     * @return A list of peer names excluding superpeers and the
+     * @return A list of peer names excluding super-peers and the
      *         lectureStudioServer.
      */
     public List<String> getPeers() {
-        System.out.println("Info: Gathering distinct peer names, excluding superpeers and the lectureStudioServer.");
+        System.out.println("Info: Gathering distinct peer names, excluding super-peers and the lectureStudioServer.");
         List<String> superpeerNames = getSuperpeerNames();
 
-        // Compiles a list of unique peer names that are not superpeers or the lectureStudioServer
+        // Compiles a list of unique peer names that are not super-peers or the lectureStudioServer
         return config.getPeer2peer().stream()
                 .map(PeerConnection::getTargetName)
                 .filter(peerName -> !superpeerNames.contains(peerName) && !"lectureStudioServer".equals(peerName))
@@ -243,9 +237,9 @@ public class NetworkConfigParser {
         // Initializes the NetworkConfigParser with the path to the output data
         NetworkConfigParser parser = new NetworkConfigParser(pathToOutputData);
 
-        System.out.println("Info: Processing superpeers.");
+        System.out.println("Info: Processing super-peers.");
         List<String> superpeerNames = parser.getSuperpeerNames();
-        System.out.println("\n--List of Superpeers:--\n");
+        System.out.println("\n--List of super-peers:--\n");
         superpeerNames.forEach(System.out::println);
         System.out.println(
                 "\n---------------------------------------------------------------------------------------------------------------------------------------------\n");
@@ -255,15 +249,15 @@ public class NetworkConfigParser {
         List<PeerConnection> connectionsFromServer = parser.getPeerConnections().stream()
                 .filter(connection -> "lectureStudioServer".equals(connection.getSourceName()))
                 .collect(Collectors.toList());
-        System.out.println("\n--List of Connections from lectureStudioServer to Superpeers or Peers:--\n");
+        System.out.println("\n--List of Connections from lectureStudioServer to super-peers or peers:--\n");
         connectionsFromServer
                 .forEach(connection -> System.out.println("lectureStudioServer -> " + connection.getTargetName()));
         System.out.println(
                 "\n---------------------------------------------------------------------------------------------------------------------------------------------\n");
-        System.out.println("Info: Analyzing connections from Superpeers to Peers.");
-        // Retrieves the mapping of superpeers to their connected peers
+        System.out.println("Info: Analyzing connections from super-peers to peers.");
+        // Retrieves the mapping of super-peers to their connected peers
         Map<String, List<String>> superpeerConnections = parser.getSuperpeerConnections();
-        System.out.println("\n--List of Connections from Superpeers to Peers:--\n");
+        System.out.println("\n--List of Connections from super-peers to peers:--\n");
         superpeerConnections.forEach((superpeer, peers) -> System.out.println(superpeer + " -> " + peers));
         System.out.println(
                 "\n---------------------------------------------------------------------------------------------------------------------------------------------\n");

@@ -315,7 +315,7 @@ public class SuperPeer {
         }        
  
         // Validation of the Network Characteristics
-        Thread.sleep(numberOfPeers * 30000);
+        //Thread.sleep(numberOfPeers * 30000);
         System.out.println("Info: Number Of Total Containern in Testbed: " + numberOfPeers);
 
         int serverPort = 9090;

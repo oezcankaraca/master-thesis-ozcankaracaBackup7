@@ -154,8 +154,7 @@ public class CSVReaderUtils {
      * Main method to start the connection analysis.
      * 
      * @param args Command-line arguments, which can include the number of peers.
-     * @throws IOException If there is an error in reading the input data or writing
-     *                     to the output file.
+     * @throws IOException If there is an error in reading the input data or writing to the output file.
      */
     public static void main(String[] args) throws IOException {
 

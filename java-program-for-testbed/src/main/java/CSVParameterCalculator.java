@@ -82,6 +82,7 @@ public class CSVParameterCalculator {
                 return i;
             }
         }
+        
         throw new IllegalArgumentException("Error: Column '" + columnName + "' not found in the headers.");
     }
 

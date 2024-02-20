@@ -154,7 +154,7 @@ public class DataGenerator {
      */
     public List<PeerStats> generateNetworkData() {
         List<PeerStats> peerStatsList = new ArrayList<>();
-        for (int i = 1; i <= numberOfPeers; i++) { // Aktualisiert um nur für die Anzahl der Peers zu iterieren
+        for (int i = 1; i <= numberOfPeers; i++) {
             String peerId = String.valueOf(i);
             String technology = selectTechnology();
 

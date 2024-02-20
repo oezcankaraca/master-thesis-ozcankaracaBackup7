@@ -20,7 +20,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * The ConnectionDetails class simulates and manages P2P network connections,
+ * The ConnectionDetails class simulates and manages network connections,
  * focusing on statistics related to network characteristics among peers.
  * It leverages the Gson library to read and write JSON data, indicating that the program handles
  * JSON data for input/output operations related to network configurations and statistics.
@@ -28,19 +28,8 @@ import java.util.Set;
  * The primary functionalities include reading network configuration data from JSON files,
  * processing command-line arguments to customize the simulation, calculating and allocating
  * bandwidth resources among peers, as well as writing updated configurations and statistics
- * back to JSON files. The class also allows for adjustments to the simulated P2P network's
- * behavior through command-line arguments, including the number of peers, the use of super-peers,
- * and the size of files to be transferred.
- * 
- * Features:
- * - Reading network configuration data from JSON files.
- * - Processing command-line arguments to adjust simulation parameters.
- * - Calculating bandwidth allocation based on peer statistics.
- * - Evaluating and displaying transfer times for files of various sizes.
- * - Writing peer information and network statistics back to JSON files.
- * 
- * This class is particularly useful in scenarios where detailed analysis and management
- * of network resources in a distributed system are required.
+ * back to JSON files. The class also allows for adjustments through command-line arguments, 
+ * including the number of peers, the use of super-peers, and the size of files to be transferred.
  * 
  * @author Özcan Karaca
  */
@@ -82,67 +71,81 @@ public class ConnectionDetails {
      * The main method for the program.
      *
      * @param args Command-line arguments.
-     * @throws JsonIOException       if there is an error reading JSON.
-     * @throws JsonSyntaxException   if there is a syntax error in JSON.
-     * @throws FileNotFoundException if the specified file is not found.
+     * @throws JsonIOException       If there is an error reading JSON.
+     * @throws JsonSyntaxException   If there is a syntax error in JSON.
+     * @throws FileNotFoundException If the specified file is not found.
      */
     public static void main(String[] args) throws JsonIOException, JsonSyntaxException, FileNotFoundException {
 
-        // Check if command-line arguments are provided for number of peers and use of super peers
+        // Check if command-line arguments are provided for number of peers, use of super peers and size of file.
         if (args.length > 0) {
-            try {
-                numberOfPeers = Integer.parseInt(args[0]);
-            } catch (NumberFormatException e) {
-                System.err
-                        .println("Error: Argument must be an integer. The default value of 10 is used.");
+            for (int i = 0; i < args.length; i++) {
+                switch (i) {
+                    case 0:
+                        numberOfPeers = Integer.parseInt(args[i]);
+                        break;
+                    case 1:
+                        useSuperPeers = Boolean.parseBoolean(args[i]);
+                        break;
+                    case 2:
+                        choiceOfPdfMB = Integer.parseInt(args[i]);
+                        break;
+                    default:
+                        // Optionally: Handle unexpected arguments
+                        System.out.println("Unexpected argument at position " + i + ": " + args[i]);
+                    break;
+                }
             }
         }
 
-        if (args.length > 1) {
-            useSuperPeers = Boolean.parseBoolean(args[1]);
-        }
-
-        if (args.length > 2) {
-            choiceOfPdfMB = Integer.parseInt(args[2]);
-        }
-
-        // Assigns the size of a PDF file based on the user's choice of file size in megabytes (MB).
-        if (choiceOfPdfMB == 2) {
-            sizeOfPDF = 2239815;
-        } else if (choiceOfPdfMB == 4) {
-            sizeOfPDF = 4293938;
-        } else if (choiceOfPdfMB == 8) {
-            sizeOfPDF = 8869498;
-        } else if (choiceOfPdfMB == 16) {
-            sizeOfPDF = 15890720;
-        } else if (choiceOfPdfMB == 32) {
-            sizeOfPDF = 32095088;
-        } else if (choiceOfPdfMB == 64) {
-            sizeOfPDF = 67108864;
-        } else if (choiceOfPdfMB == 128) {
-            sizeOfPDF = 134217728;
-        } 
+        // Assigns the size of a PDF file based on the user's choice of file size in MB
+        switch (choiceOfPdfMB) {
+            case 2:
+                sizeOfPDF = 2239815;
+                break;
+            case 4:
+                sizeOfPDF = 4293938;
+                break;
+            case 8:
+                sizeOfPDF = 8869498;
+                break;
+            case 16:
+                sizeOfPDF = 15890720;
+                break;
+            case 32:
+                sizeOfPDF = 32095088;
+                break;
+            case 64:
+                sizeOfPDF = 67108864;
+                break;
+            case 128:
+                sizeOfPDF = 134217728;
+                break;
+            default:
+                // Optionally: Handle the case where choiceOfPdfMB doesn't match any of the above
+                System.out.println("Invalid choice of PDF size: " + choiceOfPdfMB);
+                break;
+        }        
 
         // Get the user's home directory path
         String homeDirectory = System.getProperty("user.home");
         // Define the base path for the master thesis's directory
         String basePath = homeDirectory + "/Desktop/master-thesis-ozcankaraca";
 
-        // Specify the path to the output data with or without super-peer
+        // Specify the path to the output and info file with or without super-peer
         String pathToJsonOutput;
-        String pathToPeerInfoFile;
+        String pathToPeerInfo;
         if (useSuperPeers) {
             pathToJsonOutput = basePath + "/data-for-testbed/outputs-with-superpeer/output-data-" + numberOfPeers
                     + ".json";
-            pathToPeerInfoFile        = basePath + "/data-for-testbed/connection-details/with-superpeer/connection-details-"
+                    pathToPeerInfo        = basePath + "/data-for-testbed/connection-details/with-superpeer/connection-details-"
                 + numberOfPeers + ".json";
         } else {
             pathToJsonOutput = basePath + "/data-for-testbed/outputs-without-superpeer/output-data-" + numberOfPeers
                     + ".json";
-            pathToPeerInfoFile = basePath + "/data-for-testbed/connection-details/without-superpeer/connection-details-"
+                    pathToPeerInfo = basePath + "/data-for-testbed/connection-details/without-superpeer/connection-details-"
                     + numberOfPeers + ".json";
         }
-
          
         String pathToJsonInput = basePath + "/data-for-testbed/inputs/input-data-" + numberOfPeers + ".json";
 
@@ -162,7 +165,7 @@ public class ConnectionDetails {
             readAndStoreInputData(pathToJsonInput);
 
             // Write peer information to a file
-            writePeerInfosToFile(peerIds, pathToPeerInfoFile);
+            writePeerInfosToFile(peerIds, pathToPeerInfo);
 
             // Calculate bandwidth allocation
             Map<String, Integer> bandwidthAllocation = calculateBandwidthAllocation(
@@ -173,12 +176,13 @@ public class ConnectionDetails {
             printNumberOfTargetsPerSourceAndUpload(peer2peer, peerStatsMap);
 
             // Write connection properties to a file
-            writeConnectionPropertiesToFile(outputData, pathToPeerInfoFile, bandwidthAllocation);
+            writeConnectionPropertiesToFile(outputData, pathToPeerInfo, bandwidthAllocation);
 
         } catch (IOException e) {
             System.out.println("Error: An error occurred during processing.");
             e.printStackTrace();
         }
+
         JsonObject outputJson = JsonParser.parseReader(new FileReader(pathToJsonOutput)).getAsJsonObject();
 
         // Calculate bandwidth allocation again and print the results
@@ -202,7 +206,7 @@ public class ConnectionDetails {
 
         printDataTransferTimes(bandwidthAllocation, sizeOfPDF);
 
-        System.out.println("\nInfo: Peer information has been saved to the file: " + pathToPeerInfoFile);
+        System.out.println("\nInfo: Peer information has been saved to the file: " + pathToPeerInfo);
     }
 
     private static void printDataTransferTimes(Map<String, Integer> bandwidthAllocation, int fileSizeBytes) {
@@ -260,7 +264,7 @@ public class ConnectionDetails {
      * connection and peer statistics.
      *
      * @param pathToJsonInput The path to the JSON input file.
-     * @throws FileNotFoundException if the specified file is not found.
+     * @throws FileNotFoundException If the specified file is not found.
      */
     private static void readAndStoreInputData(String pathToJsonInput) throws FileNotFoundException {
         JsonObject inputData = JsonParser.parseReader(new FileReader(pathToJsonInput)).getAsJsonObject();
@@ -301,7 +305,7 @@ public class ConnectionDetails {
      *
      * @param peerIds  The set of peer IDs to be written to the file.
      * @param filePath The path to the output file.
-     * @throws IOException if there is an error writing to the file.
+     * @throws IOException If there is an error writing to the file.
      */
     private static void writePeerInfosToFile(Set<String> peerIds, String filePath) throws IOException {
         try (FileWriter writer = new FileWriter(filePath)) {
@@ -334,7 +338,7 @@ public class ConnectionDetails {
      * @param outputData          The JSON object containing output data.
      * @param filePath            The path to the output file.
      * @param bandwidthAllocation The map of bandwidth allocation for connections.
-     * @throws IOException if there is an error writing to the file.
+     * @throws IOException If there is an error writing to the file.
      */
     private static void writeConnectionPropertiesToFile(JsonObject outputData, String filePath,
             Map<String, Integer> bandwidthAllocation) throws IOException {

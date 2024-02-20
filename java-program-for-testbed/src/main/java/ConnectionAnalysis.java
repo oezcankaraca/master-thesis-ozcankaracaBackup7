@@ -11,10 +11,9 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * The ConnectionAnalysis class is designed to analyze network connection details in a distributed system.
+ * The ConnectionAnalysis class is designed to analyze network connection details.
  * It reads and processes network configuration data, evaluates the completeness
  * of the network mesh, and reports any missing connections.
- * This class is particularly useful in scenarios where ensuring full mesh connectivity between network nodes is critical.
  * 
  * @author Özcan Karaca
  */
@@ -148,6 +147,7 @@ public class ConnectionAnalysis {
 
             // Append connection information to the details string
             connectionDetails.append(connectionInfo);
+           
             // Add the connection to the set of all connections
             allConnections.add(source + "-" + target);
         }

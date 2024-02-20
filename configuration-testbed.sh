@@ -191,7 +191,7 @@ run_validation() {
 
 # Executing the testbed setup and validation process
 testbed_and_containerlab
-run_validation
+#run_validation
 
 # Check if the previous command was successful
 if [ $? -eq 0 ]; then

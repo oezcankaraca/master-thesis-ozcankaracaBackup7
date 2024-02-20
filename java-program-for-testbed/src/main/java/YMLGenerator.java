@@ -7,21 +7,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * The YMLGenerator class is designed for creating a YAML (YML) file that
- * defines the network topology
- * for a container-based network testbed. This class reads network configuration
- * details from a JSON file
- * and translates them into a YML format suitable for container orchestration
- * tools like ContainerLab.
- * It supports generating configurations for a lectureStudioServer, multiple
- * peers, super-peers and
- * trackerPeer, includes options for additional monitoring and visualization
- * tools like
+ * The YMLGenerator class is designed for creating a YAML (YML) file that defines the network topology
+ * for a container-based network testbed. This class reads network configuration details from a JSON file
+ * and translates them into a YML format suitable for container orchestration tools like ContainerLab.
+ * It supports generating configurations for a lectureStudioServer, multiple peers, super-peers and
+ * trackerPeer, includes options for additional monitoring and visualization tools like
  * Prometheus, cAdvisor, and Grafana.
- * The class handles the assignment of network interfaces, IP addresses, and
- * environment variables
- * for each node in the network, ensuring a cohesive and functional network
- * setup for testing
+ * The class handles the assignment of network interfaces, IP addresses, and environment variables
+ * for each node in the network, ensuring a cohesive and functional network setup for testing 
  * and experimentation purposes.
  * 
  * @author Özcan Karaca
@@ -44,8 +37,8 @@ public class YMLGenerator {
     private static Map<String, String> peerEnvVariablesSuperPeerIP = new HashMap<>();
     private static int subnetCounter = 21;
 
-    private static int numberOfPeers = 50;
-    private static boolean useSuperPeers = true;
+    private static int numberOfPeers = 75;
+    private static boolean useSuperPeers = false;
     private static String pathToConnectionDetails;
 
     /**
@@ -58,22 +51,23 @@ public class YMLGenerator {
      *             the number of peers.
      */
     public static void main(String[] args) {
-        // Check if a command-line argument is provided for the number of peers.
+        // Check if a command-line argument is provided for the number of peers and use of super-peers.
         if (args.length > 0) {
-            try {
-                // Try parsing the first argument as the number of peers.
-                numberOfPeers = Integer.parseInt(args[0]);
-            } catch (NumberFormatException e) {
-                // If parsing fails, log an error and use the default value for the number of
-                // peers.
-                System.err.println("Error: Argument must be an integer. The default value of 10 is used.");
+            for (int i = 0; i < args.length; i++) {
+                switch (i) {
+                    case 0:
+                        numberOfPeers = Integer.parseInt(args[i]);
+                        break;
+                    case 1:
+                        useSuperPeers = Boolean.parseBoolean(args[i]);
+                        break;
+                    default:
+                        // Optionally: Handle unexpected arguments
+                        System.out.println("Unexpected argument at position " + i + ": " + args[i]);
+                    break;
+                }
             }
         }
-
-        if (args.length > 1) {
-            useSuperPeers = Boolean.parseBoolean(args[1]);
-        }
-
         // Print the beginning of the YML file generation step.
         System.out.println("\nStep Started: Creating YML file for testbed.\n");
 
@@ -142,8 +136,7 @@ public class YMLGenerator {
      * Generates a topology file in YML format for network configuration.
      * This file includes configurations for peers, super-peers, and trackerPeer.
      *
-     * @param includeExtraNodes Flag indicating whether to include additional nodes
-     *                          like Grafana, Prometheus.
+     * @param includeExtraNodes Flag indicating whether to include additional nodes like Grafana, Prometheus.
      * @throws IOException If there is an error writing to the YML file.
      */
     public void generateTopologyFile(boolean includeExtraNodes) throws IOException {
@@ -289,7 +282,7 @@ public class YMLGenerator {
                 appendBindsAndExec(fw, isNormalPeer);
             }
 
-            /**
+            
             // Configuration for the cadvisor tool
             fw.write("\n    cadvisor:\n");
             fw.write("      kind: linux\n");
@@ -312,7 +305,7 @@ public class YMLGenerator {
                     "       - " + basePath
                             + "/data-for-testbed/data-for-analysing-monitoring/prometheus.yml:/etc/prometheus/prometheus.yml\n");
             fw.write("      ports:\n");
-            fw.write("        - \"9090:9090\"\n"); **/
+            fw.write("        - \"9090:9090\"\n"); 
 
             // Append extra nodes if required.
             if (!includeExtraNodes) {
@@ -334,8 +327,7 @@ public class YMLGenerator {
     }
 
     /**
-     * Appends additional monitoring and visualization tools to the YML
-     * configuration.
+     * Appends additional monitoring and visualization tools to the YML configuration.
      * These tools are used for monitoring the network and visualizing metrics.
      *
      * @param fw FileWriter instance used to write to the YML file.
@@ -351,8 +343,7 @@ public class YMLGenerator {
     }
 
     /**
-     * Appends binding and execution commands to the YML file for either super-peer
-     * or peer nodes.
+     * Appends binding and execution commands to the YML file for either super-peer or peer nodes.
      *
      * @param fw          FileWriter instance used to write to the YML file.
      * @param isSuperPeer Boolean flag to indicate if the node is a super-peer.
@@ -390,13 +381,10 @@ public class YMLGenerator {
 
     /**
      * Generates an IP address for a node within the network.
-     * The IP address is generated based on the connection counter and the node's
-     * position.
+     * The IP address is generated based on the connection counter and the node's position.
      *
-     * @param connectionCounter The connection number in the sequence of generated
-     *                          connections.
-     * @param isFirstNode       Boolean indicating if the node is the first in the
-     *                          connection pair.
+     * @param connectionCounter The connection number in the sequence of generated connections.
+     * @param isFirstNode       Boolean indicating if the node is the first in the connection pair.
      * @return Generated IP address as a String.
      */
     private static String generateIpAddress(int connectionCounter, boolean isFirstNode) {
@@ -406,10 +394,8 @@ public class YMLGenerator {
     }
 
     /**
-     * Processes link information to assign IP addresses and environment variables
-     * for each connection.
-     * This method generates IP addresses for each link and updates environment
-     * variables for peers and super-peers.
+     * Processes link information to assign IP addresses and environment variables for each connection.
+     * This method generates IP addresses for each link and updates environment variables for peers and super-peers.
      */
     public static void processLinkInformation() {
         int connectionCounter = 1;
@@ -442,11 +428,9 @@ public class YMLGenerator {
 
     /**
      * Assigns an interface name (e.g., eth1, eth2) for a given node.
-     * The interface name is generated based on the number of interfaces already
-     * assigned to the node.
+     * The interface name is generated based on the number of interfaces already assigned to the node.
      *
-     * @param nodeName The name of the node for which the interface is to be
-     *                 assigned.
+     * @param nodeName The name of the node for which the interface is to be assigned.
      * @return The interface name as a String.
      */
     private String assignInterface(String nodeName) {
@@ -460,8 +444,7 @@ public class YMLGenerator {
 
     /**
      * Determines the super-peer responsible for a given peer.
-     * It iterates through the map of super-peers to their connected peers to find
-     * the corresponding super-peer.
+     * It iterates through the map of super-peers to their connected peers to find the corresponding super-peer.
      *
      * @param peerName The name of the peer whose super-peer is to be determined.
      * @return The name of the super-peer.
@@ -469,8 +452,7 @@ public class YMLGenerator {
     private String determineSuperPeerForPeer(String peerName) {
         // Iterate over each super-peer and their connected peers
         for (Map.Entry<String, Set<String>> entry : superPeerToPeersMap.entrySet()) {
-            // Check if the current super-peer has the given peer in its set of connected
-            // peers
+            // Check if the current super-peer has the given peer in its set of connected peers
             if (entry.getValue().contains(peerName)) {
                 return entry.getKey();
             }
@@ -481,8 +463,7 @@ public class YMLGenerator {
 
     /**
      * Reads and processes the output JSON file to extract network connections.
-     * This method constructs a map of super-peers and their connected peers based
-     * on the output file.
+     * This method constructs a map of super-peers and their connected peers based on the output file.
      */
     private void readAndProcessOutputFile() {
         System.out.println("Info: Reading and processing the output file.");
@@ -533,8 +514,7 @@ public class YMLGenerator {
                 String lectureStudioInterface = assignInterface("lectureStudioServer");
                 String peerInterface = assignInterface(peer);
 
-                // Create a formatted string representing the link information for
-                // lectureStudioServer
+                // Create a formatted string representing the link information for lectureStudioServer
                 String linkInfo = "lectureStudioServer:" + lectureStudioInterface + ", " + peer + ":" + peerInterface;
                 linkInformation.add(linkInfo);
                 uniqueConnections.add(peer);
