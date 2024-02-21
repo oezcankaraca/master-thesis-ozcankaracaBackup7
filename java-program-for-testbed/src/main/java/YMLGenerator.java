@@ -282,7 +282,7 @@ public class YMLGenerator {
                 appendBindsAndExec(fw, isNormalPeer);
             }
 
-            
+            /** 
             // Configuration for the cadvisor tool
             fw.write("\n    cadvisor:\n");
             fw.write("      kind: linux\n");
@@ -306,7 +306,7 @@ public class YMLGenerator {
                             + "/data-for-testbed/data-for-analysing-monitoring/prometheus.yml:/etc/prometheus/prometheus.yml\n");
             fw.write("      ports:\n");
             fw.write("        - \"9090:9090\"\n"); 
-
+            */
             // Append extra nodes if required.
             if (!includeExtraNodes) {
                 System.out.println("Info: Appending extra nodes: Grafana, Prometheus and cAdvisor");
