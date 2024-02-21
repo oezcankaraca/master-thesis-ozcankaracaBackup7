@@ -61,7 +61,7 @@ public class ConnectionDetails {
     }
 
     // Default number of peers, use of super-peer, choice of size pdf file
-    private static int numberOfPeers = 5;
+    private static int numberOfPeers = 50;
     private static boolean useSuperPeers = false;
     private static int choiceOfPdfMB = 2;
 

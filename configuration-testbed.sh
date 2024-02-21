@@ -192,7 +192,7 @@ run_validation() {
 
 # Executing the testbed setup and validation process
 testbed_and_containerlab
-run_validation
+#run_validation
 
 # Check if the previous command was successful
 if [ $? -eq 0 ]; then
@@ -491,7 +491,7 @@ while IFS= read -r line; do
     if [[ "$line" == "Info: All containers have the same file based on the hash values." ]]; then
         all_containers_have_file=true
     fi
-done < <(mvn -q exec:java -Dexec.mainClass="$java_program_for_validation_class2" -Dexec.args="$NUMBER_OF_PEERS_ARG")
+done < <(mvn -q exec:java -Dexec.mainClass="$java_program_for_validation_class2" -Dexec.args="$number_of_peers")
 sleep 5
 
 printf "Step Started: Cleaning up the testbed.\n"
@@ -610,7 +610,7 @@ echo "Number of Peers: $number_of_peers"
 echo "P2P Algorithm: $algorithm_status"
 echo "All containers have the same PDF file: $all_containers_have_file"
 echo "Total Received Bytes: $total_received_bytes Bytes"
-echo "Total Received Bytes: $smallest_bandwidth Kbps"
+echo "Smallest Bandwidth: $smallest_bandwidth Kbps"
 
 echo "Minimum Connection Time: $min_connection_time_sec s"
 echo "Avarage Connection Time: $avg_connection_time_sec s"

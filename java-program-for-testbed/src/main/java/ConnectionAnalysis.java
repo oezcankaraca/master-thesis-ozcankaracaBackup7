@@ -61,7 +61,7 @@ public class ConnectionAnalysis {
     }
 
     // Default number of peers
-    private static int numberOfPeers = 10;
+    private static int numberOfPeers = 50;
 
     /**
      * Main method to start the connection analysis.
