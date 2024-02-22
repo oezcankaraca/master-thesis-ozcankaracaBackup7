@@ -1,4 +1,4 @@
-Info: Reading input data from: /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/inputs/input-data-20.json
+Info: Reading input data from: /home/ozcankaraca/Desktop/master-thesis-ozcankaraca/data-for-testbed/data-for-topology/inputs/input-data-20.json
 Info: Processing peer data.
 Info: Processing connection data.
 Info: Analyzing mesh completeness.

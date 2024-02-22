@@ -37,8 +37,8 @@ public class YMLGenerator {
     private static Map<String, String> peerEnvVariablesSuperPeerIP = new HashMap<>();
     private static int subnetCounter = 21;
 
-    private static int numberOfPeers = 50;
-    private static boolean useSuperPeers = false;
+    private static int numberOfPeers = 5;
+    private static boolean useSuperPeers = true;
     private static String pathToConnectionDetails;
 
     /**
@@ -305,8 +305,9 @@ public class YMLGenerator {
                     "       - " + basePath
                             + "/data-for-testbed/data-for-analysing-monitoring/prometheus.yml:/etc/prometheus/prometheus.yml\n");
             fw.write("      ports:\n");
-            fw.write("        - \"9090:9090\"\n"); 
-            */
+            fw.write("        - \"9090:9090\"\n");
+            */ 
+            
             // Append extra nodes if required.
             if (!includeExtraNodes) {
                 System.out.println("Info: Appending extra nodes: Grafana, Prometheus and cAdvisor");
