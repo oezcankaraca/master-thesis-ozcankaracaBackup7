@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Set the monitoring interval and duration
+# Set the monitoring interval
 interval=1       
-duration=60      
-measurements=$((duration / interval))
 
 # Declare associative arrays to store CPU and memory usage sums and counts
 declare -A cpu_usage_sum
@@ -22,8 +20,8 @@ do
     count[$name]=0
 done
 
-# Perform measurements
-for (( i=0; i<$measurements; i++ ))
+# Perform measurements continuously
+while true
 do
     for container in "${containers[@]}"
     do
@@ -31,7 +29,7 @@ do
 
         # Check if the container is still running
         if ! docker ps -q | grep -qw $id; then
-            echo "Monitoring is being terminated."
+            echo "A container has stopped. Monitoring is being terminated."
             echo ""
             break 2  # Exit both loops
         fi
@@ -77,4 +75,3 @@ done
 # Display total averages
 echo "Total Average CPU Usage: $total_avg_cpu %"
 echo "Total Average Memory Usage: $total_avg_mem MiB"
-
