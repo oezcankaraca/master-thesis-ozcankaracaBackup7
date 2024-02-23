@@ -45,9 +45,6 @@ PDF_FILES_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/data-for-t
 DESTINATION_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/data-for-tests/"
 DELETE_FILE_PATH="$BASE_PATH/master-thesis-ozcankaraca/data-for-testbed/data-for-tests/mydocument.pdf"
 
-declare -a cpu_measurements
-declare -a mem_measurements
-
 # Iterate over each combination of variable values
 for p2p_algorithm_used in "${p2p_algorithm_used_values[@]}"; do
     for number_of_peers in "${number_of_peers_values[@]}"; do
@@ -72,55 +69,6 @@ fi
 
 sleep 30
 printf "\nStep Done: Choosing test case and moving data file are done.\n\n"
-
-monitor_resources() {
-    MAX_USAGE_FILE_PATH="/tmp/max_usage.txt"
-    MEASUREMENTS=5 # Anzahl der Messungen
-    SLEEP_DURATION=1 # Wartezeit zwischen den Messungen in Sekunden
-
-    while true; do
-
-        for ((i=0; i<MEASUREMENTS; i++)); do
-            total_cpu=0
-            total_mem=0
-            num_containers=$(docker ps -q | wc -l)
-
-            for container_id in $(docker ps -q); do
-                if docker ps -a --no-trunc | grep -q "^$container_id"; then
-                    current_cpu=$(docker stats --no-stream --format "{{.CPUPerc}}" "$container_id" | sed 's/%//')
-                    current_mem=$(docker stats --no-stream --format "{{.MemPerc}}" "$container_id" | sed 's/%//')
-
-                    if [[ -n "$current_cpu" ]] && [[ -n "$current_mem" ]]; then
-                        total_cpu=$(echo "$total_cpu + $current_cpu" | bc -l)
-                        total_mem=$(echo "$total_mem + $current_mem" | bc -l)
-                    fi
-                fi
-            done
-
-            cpu_measurements[i]=$total_cpu
-            mem_measurements[i]=$total_mem
-            sleep $SLEEP_DURATION
-        done
-
-        # Sortieren und Entfernen der Spitzenwerte
-        IFS=$'\n' sorted_cpu=($(sort <<<"${cpu_measurements[*]}"))
-        IFS=$'\n' sorted_mem=($(sort <<<"${mem_measurements[*]}"))
-        unset IFS
-
-        # Entfernen der höchsten und niedrigsten Werte
-        sorted_cpu=("${sorted_cpu[@]:1:$((${#sorted_cpu[@]}-2))}")
-        sorted_mem=("${sorted_mem[@]:1:$((${#sorted_mem[@]}-2))}")
-
-        # Berechnung des Durchschnitts
-        avg_cpu=$(printf "%.2f" $(echo "(${sorted_cpu[*]})/${#sorted_cpu[@]}" | bc -l))
-        avg_mem=$(printf "%.2f" $(echo "(${sorted_mem[*]})/${#sorted_mem[@]}" | bc -l))
-
-        echo "Durchschnittliche CPU-Nutzung: $avg_cpu%" > "$MAX_USAGE_FILE_PATH"
-        echo "Durchschnittliche Speichernutzung: $avg_mem%" >> "$MAX_USAGE_FILE_PATH"
-
-        sleep 5
-    done
-}
 
 testbed_and_containerlab() {
 
@@ -207,12 +155,6 @@ printf "\nStep Done: Combining connection details is done.\n"
     sudo containerlab deploy -t "$CONTAINERLAB_YML_PATH"
     sleep 5 
     printf "\nStep Done: Creating Containerlab file is done.\n"
-monitor_resources &
-
-# Speichern der Prozess-ID der Überwachungsfunktion
-monitoring_pid=$!
-    
-    
 }
 
 # Function to run validation tests
@@ -554,13 +496,14 @@ sleep 5
 
 printf "Step Started: Cleaning up the testbed.\n"
 
+# Beenden der Ressourcenüberwachung, falls die PID existiert
+if [ ! -z "$monitoring_pid" ]; then
+    kill $monitoring_pid
+fi
+
 # Destroying the Containerlab setup and cleaning up the environment
 printf "\nInfo: Destroying Containerlab and cleaning up the environment.\n\n"
 sudo containerlab destroy -t "$CONTAINERLAB_YML_PATH" --cleanup
-kill $monitoring_pid
-
-echo "Maximale Ressourcennutzung während des Tests:"
-cat /tmp/max_usage.txt
 
 # Waiting for a short period to ensure all containers are stopped
 printf "\nInfo: Waiting for all Containers to stop.\n"
