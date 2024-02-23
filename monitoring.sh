@@ -35,11 +35,11 @@ do
         fi
 
         # Retrieve and process the container stats
-        stats=$(docker stats --no-stream --format "{{.CPUPerc}} {{.MemUsage}}" $id)
+        stats=$(docker stats --no-stream --format "{{.CPUPerc}} {{.MemPerc}}" $id)
 
         read cpu mem <<< $stats
-        cpu_usage=$(echo $cpu | tr -d '%' | sed 's/^$/0/')  # Replace empty strings with 0
-        mem_usage=$(echo $mem | cut -d '/' -f 1 | tr -d 'MiB' | sed 's/^$/0/')
+        cpu_usage=$(echo $cpu | tr -d '%' | sed 's/^$/0/')
+        mem_usage=$(echo $mem | tr -d '%' | sed 's/^$/0/') 
 
         cpu_usage_sum[$name]=$(echo "${cpu_usage_sum[$name]} + $cpu_usage" | bc | awk '{printf "%.2f", $0}')
         mem_usage_sum[$name]=$(echo "${mem_usage_sum[$name]} + $mem_usage" | bc | awk '{printf "%.2f", $0}')
@@ -68,10 +68,10 @@ do
 
     echo "Container Name: $name"
     echo "Average CPU Usage: ${avg_cpu_usage} %"
-    echo "Average Memory Usage: ${avg_mem_usage} MiB"
+    echo "Average Memory Usage: ${avg_mem_usage} %"
     echo ""
 done
 
 # Display total averages
 echo "Total Average CPU Usage: $total_avg_cpu %"
-echo "Total Average Memory Usage: $total_avg_mem MiB"
+echo "Total Average Memory Usage: $total_avg_mem %"

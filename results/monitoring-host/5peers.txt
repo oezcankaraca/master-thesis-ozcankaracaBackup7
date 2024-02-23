@@ -1,30 +1,31 @@
 Container Name: p2p-containerlab-topology-2
-Average CPU Usage: 0.71 %
-Average Memory Usage: 27.51 MiB
-
-Container Name: p2p-containerlab-topology-4
-Average CPU Usage: 0.20 %
-Average Memory Usage: 32.08 MiB
-
-Container Name: p2p-containerlab-topology-5
-Average CPU Usage: 0.31 %
-Average Memory Usage: 31.93 MiB
-
-Container Name: p2p-containerlab-topology-3
-Average CPU Usage: 0.58 %
-Average Memory Usage: 37.34 MiB
+Average CPU Usage: 0.25 %
+Average Memory Usage: 0.80 %
 
 Container Name: p2p-containerlab-topology-1
-Average CPU Usage: 0.85 %
-Average Memory Usage: 37.72 MiB
+Average CPU Usage: 0.62 %
+Average Memory Usage: 0.81 %
 
-Container Name: p2p-containerlab-topology-trackerPeer
-Average CPU Usage: 0.30 %
-Average Memory Usage: 15.57 MiB
+Container Name: p2p-containerlab-topology-4
+Average CPU Usage: 0.97 %
+Average Memory Usage: 0.95 %
+
+Container Name: p2p-containerlab-topology-3
+Average CPU Usage: 0.76 %
+Average Memory Usage: 0.96 %
+
+Container Name: p2p-containerlab-topology-5
+Average CPU Usage: 1.55 %
+Average Memory Usage: 0.97 %
 
 Container Name: p2p-containerlab-topology-lectureStudioServer
-Average CPU Usage: 0.30 %
-Average Memory Usage: 30.48 MiB
+Average CPU Usage: 0.31 %
+Average Memory Usage: 0.78 %
 
-Total Average CPU Usage: 3.25 %
-Total Average Memory Usage: 212.63 MiB
+Container Name: p2p-containerlab-topology-trackerPeer
+Average CPU Usage: 0.27 %
+Average Memory Usage: 0.34 %
+
+Total Average CPU Usage: 4.73 %
+Total Average Memory Usage: 5.61 %
+
